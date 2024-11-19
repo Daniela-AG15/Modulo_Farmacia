@@ -1,18 +1,8 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import SplashScreen from './screens/splashScreen';
-import Login from './screens/login';
+import AppNavigator from './navigation/appNavigator'; // Ruta correcta
 
-const Stack = createStackNavigator();
+const App = () => {
+  return <AppNavigator />;
+};
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="Login" component={Login} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+export default App;
