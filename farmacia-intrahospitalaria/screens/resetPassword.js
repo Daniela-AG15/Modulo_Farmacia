@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ResetPasswordScreen = ({ navigation }) =>  {
+const ResetPasswordScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-  
+
   const isValidEmail = email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   const passwordsMatch = password && confirmPassword && password === confirmPassword;
 
@@ -89,8 +89,8 @@ const ResetPasswordScreen = ({ navigation }) =>  {
       <TouchableOpacity
         style={[styles.button, !passwordsMatch && { backgroundColor: '#42418c' }]}
         disabled={!isValidEmail || !passwordsMatch}>
-    <Text style={styles.buttonText}>Recuperar Contraseña</Text>
-    </TouchableOpacity>
+        <Text style={styles.buttonText}>Recuperar Contraseña</Text>
+      </TouchableOpacity>
 
 
       {/* Footer */}
@@ -103,73 +103,73 @@ const ResetPasswordScreen = ({ navigation }) =>  {
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flexGrow: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 16,
-      backgroundColor: '#F5F5F5',
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      color: '#333',
-    },
-    span: {
-      fontSize: 10,
-      fontWeight: 'bold',
-      color: '#A6AEBF',
-      marginBottom: 16,
-    },
-    inputContainer: {
-      width: '100%',
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#FFF',
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: '#DDD',
-      paddingHorizontal: 16,
-      marginBottom: 16,
-    },
-    input: {
-      flex: 1,
-      height: 50,
-      color: '#333',
-    },
-    button: {
-      width: '100%',
-      height: 50,
-      backgroundColor: '#003DA5',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 8,
-      marginVertical: 16,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 4,
-      elevation: 3,
-    },
-    buttonText: {
-      color: '#FFF',
-      fontWeight: 'bold',
-      fontSize: 16,
-    },
-    errorText: {
-      color: '#FF0000',
-      fontSize: 12,
-      marginBottom: 8,
-    },
-    footerText: {
-      marginTop: 16,
-      fontSize: 14,
-      color: '#555',
-    },
-    footerLink: {
-      color: '#003DA5',
-      fontWeight: 'bold',
-    },
+  container: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#F5F5F5',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  span: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#A6AEBF',
+    marginBottom: 16,
+  },
+  inputContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#DDD',
+    paddingHorizontal: 16,
+    marginBottom: 16,
+  },
+  input: {
+    flex: 1,
+    height: 50,
+    color: '#333',
+  },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#003DA5',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    marginVertical: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  errorText: {
+    color: '#FF0000',
+    fontSize: 12,
+    marginBottom: 8,
+  },
+  footerText: {
+    marginTop: 16,
+    fontSize: 14,
+    color: '#555',
+  },
+  footerLink: {
+    color: '#003DA5',
+    fontWeight: 'bold',
+  },
 });
-  
+
 export default ResetPasswordScreen;

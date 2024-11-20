@@ -1,5 +1,5 @@
 import React from 'react';
-import AppNavigator from './navigation/appNavigator'; // Ruta correcta
+import AppNavigator from './router/appNavigator'; // Ruta correcta
 
 const App = () => {
   return <AppNavigator />;
