@@ -2,26 +2,25 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-const AgregarConsumibleScreen = ({ navigation }) => {
-    const [nombre, setNombre] = useState('');
-    const [descripcion, setDescripcion] = useState('');
-    const [cantidad, setCantidad] = useState('');
-    const [tipo, setTipo] = useState('');
-    const [departamento, setDepartamento] = useState('');
+const AgregarLoteScreen = ({ navigation }) => {
+    const [medicamento, setMedicamento] = useState('');
+    const [personalM, setPersonalM] = useState('');
+    const [clave, setClave] = useState('');
     const [estatus, setEstatus] = useState('');
+    const [costo, setCosto] = useState('');
+    const [cantidad, setCantidad] = useState('');
+    const [ubicacion, setUbiacion] = useState('');
 
     // Simulación de agregar un consumible
-    const handleAgregarConsumible = () => {
+    const handleAgregarLote = () => {
         const newConsumible = {
-            nombre,
-            descripcion,
-            cantidad,
-            tipo,
-            departamento,
+            medicamento,
+            personalM,
+            clave,
             estatus,
         };
 
-        Alert.alert('Consumible Agregado', `Se ha agregado el consumible: ${nombre}`);
+        Alert.alert('Lote Agregado', `Se ha agregado el lote: ${medicamento}`);
 
         navigation.goBack();
     };
@@ -30,55 +29,42 @@ const AgregarConsumibleScreen = ({ navigation }) => {
         <View style={styles.container}>
             {/* Título */}
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Registrar Consumible</Text>
+                <Text style={styles.headerTitle}>Registrar Lote</Text>
             </View>
 
-            {/* Formulario */}
-            <TextInput
-                style={styles.input}
-                placeholder="Nombre"
-                value={nombre}
-                onChangeText={setNombre}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Descripción"
-                value={descripcion}
-                onChangeText={setDescripcion}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Cantidad"
-                keyboardType="numeric"
-                value={cantidad}
-                onChangeText={setCantidad}
-            />
-
-            {/* Selector de Tipo */}
-            <Text style={styles.label}>Tipo</Text>
+            {/* Selector de Medicamento */}
+            <Text style={styles.label}>Medicamento</Text>
             <Picker
-                selectedValue={tipo}
-                onValueChange={(itemValue) => setTipo(itemValue)}
+                selectedValue={medicamento}
+                onValueChange={(itemValue) => setMedicamento(itemValue)}
                 style={styles.picker}
             >
-                <Picker.Item label="Seleccione un tipo" value="" />
+                <Picker.Item label="Seleccione un medicamento" value="" />
                 <Picker.Item label="Material" value="Material" />
                 <Picker.Item label="Equipo" value="Equipo" />
                 <Picker.Item label="Instrumento" value="Instrumento" />
             </Picker>
 
-            {/* Selector de Departamento */}
-            <Text style={styles.label}>Departamento</Text>
+            {/* Selector de Personal Medico */}
+            <Text style={styles.label}>Personal Medico</Text>
             <Picker
-                selectedValue={departamento}
-                onValueChange={(itemValue) => setDepartamento(itemValue)}
+                selectedValue={personalM}
+                onValueChange={(itemValue) => setPersonalM(itemValue)}
                 style={styles.picker}
             >
-                <Picker.Item label="Seleccione un departamento" value="" />
-                <Picker.Item label="Farmacia" value="Farmacia" />
-                <Picker.Item label="Urgencias" value="Urgencias" />
-                <Picker.Item label="Laboratorio" value="Laboratorio" />
+                <Picker.Item label="Seleccione un medico" value="" />
+                <Picker.Item label="Material" value="Material" />
+                <Picker.Item label="Equipo" value="Equipo" />
+                <Picker.Item label="Instrumento" value="Instrumento" />
             </Picker>
+
+            <TextInput
+                style={styles.input}
+                placeholder="Clave"
+                keyboardType="text"
+                value={clave}
+                onChangeText={setClave}
+            />
 
             {/* Selector de Estatus */}
             <Text style={styles.label}>Estatus</Text>
@@ -87,13 +73,37 @@ const AgregarConsumibleScreen = ({ navigation }) => {
                 onValueChange={(itemValue) => setEstatus(itemValue)}
                 style={styles.picker}
             >
-                <Picker.Item label="Seleccione un estatus" value="" />
+                <Picker.Item label="Seleccione un tipo" value="" />
                 <Picker.Item label="Activo" value="Activo" />
                 <Picker.Item label="Inactivo" value="Inactivo" />
             </Picker>
 
+            <TextInput
+                style={styles.input}
+                placeholder="Costo"
+                keyboardType="numeric"
+                value={costo}
+                onChangeText={setCosto}
+            />
+
+            <TextInput
+                style={styles.input}
+                placeholder="Cantidad"
+                keyboardType="numeric"
+                value={cantidad}
+                onChangeText={setCantidad}
+            />
+
+            <TextInput
+                style={styles.input}
+                placeholder="Ubicacion"
+                keyboardType="text"
+                value={ubicacion}
+                onChangeText={setUbiacion}
+            />
+
             {/* Botón de agregar */}
-            <TouchableOpacity style={styles.addButton} onPress={handleAgregarConsumible}>
+            <TouchableOpacity style={styles.addButton} onPress={handleAgregarLote}>
                 <Text style={styles.addButtonText}>Agregar</Text>
             </TouchableOpacity>
         </View>
@@ -154,4 +164,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AgregarConsumibleScreen;
+export default AgregarLoteScreen;

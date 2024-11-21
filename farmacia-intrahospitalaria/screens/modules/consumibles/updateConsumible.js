@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 const ActualizarConsumibleScreen = ({ route, navigation }) => {
-    // Recibiendo los datos del consumible que se va a actualizar
     const { consumible } = route.params;
 
     const [nombre, setNombre] = useState(consumible?.nombre || '');
     const [descripcion, setDescripcion] = useState(consumible?.descripcion || '');
-    const [cantidad, setCantidad] = useState(consumible?.cantidad || '');
+    const [cantidad, setCantidad] = useState(consumible?.cantidad?.toString() || '');
     const [tipo, setTipo] = useState(consumible?.tipo || '');
     const [departamento, setDepartamento] = useState(consumible?.departamento || '');
     const [estatus, setEstatus] = useState(consumible?.estatus || '');
 
-    // Simulación de actualizar un consumible
     const handleActualizarConsumible = () => {
         const updatedConsumible = {
             id: consumible.id,
@@ -24,10 +23,8 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
             estatus,
         };
 
-        // Aquí iría la lógica para actualizar el consumible en la API o en un estado global.
         Alert.alert('Consumible Actualizado', `Se ha actualizado el consumible: ${nombre}`);
-
-        navigation.goBack(); // Volver a la pantalla anterior
+        navigation.goBack();
     };
 
     return (
@@ -57,30 +54,49 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
                 value={cantidad}
                 onChangeText={setCantidad}
             />
-            <TextInput
-                style={styles.input}
-                placeholder="Tipo"
-                value={tipo}
-                onChangeText={setTipo}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Departamento"
-                value={departamento}
-                onChangeText={setDepartamento}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Estatus"
-                value={estatus}
-                onChangeText={setEstatus}
-            />
+
+            {/* Selector de Tipo */}
+            <Text style={styles.label}>Tipo</Text>
+            <Picker
+                selectedValue={tipo}
+                onValueChange={(itemValue) => setTipo(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione un tipo" value="" />
+                <Picker.Item label="Material" value="Material" />
+                <Picker.Item label="Equipo" value="Equipo" />
+                <Picker.Item label="Instrumento" value="Instrumento" />
+            </Picker>
+
+            {/* Selector de Departamento */}
+            <Text style={styles.label}>Departamento</Text>
+            <Picker
+                selectedValue={departamento}
+                onValueChange={(itemValue) => setDepartamento(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione un departamento" value="" />
+                <Picker.Item label="Farmacia" value="Farmacia" />
+                <Picker.Item label="Urgencias" value="Urgencias" />
+                <Picker.Item label="Laboratorio" value="Laboratorio" />
+            </Picker>
+
+            {/* Selector de Estatus */}
+            <Text style={styles.label}>Estatus</Text>
+            <Picker
+                selectedValue={estatus}
+                onValueChange={(itemValue) => setEstatus(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione un estatus" value="" />
+                <Picker.Item label="Activo" value="Activo" />
+                <Picker.Item label="Inactivo" value="Inactivo" />
+            </Picker>
 
             {/* Botón de actualizar */}
             <TouchableOpacity style={styles.addButton} onPress={handleActualizarConsumible}>
                 <Text style={styles.addButtonText}>Actualizar</Text>
             </TouchableOpacity>
-
         </View>
     );
 };
@@ -94,7 +110,7 @@ const styles = StyleSheet.create({
     header: {
         marginTop: 20,
         alignItems: 'center',
-        marginBottom: 30
+        marginBottom: 30,
     },
     headerTitle: {
         fontSize: 24,
@@ -111,6 +127,19 @@ const styles = StyleSheet.create({
         fontSize: 16,
         backgroundColor: '#FFF',
     },
+    picker: {
+        height: 50,
+        backgroundColor: '#FFF',
+        borderColor: '#DDD',
+        borderWidth: 1,
+        borderRadius: 8,
+        marginBottom: 20,
+    },
+    label: {
+        fontSize: 16,
+        marginBottom: 8,
+        color: '#333',
+    },
     addButton: {
         backgroundColor: '#003DA5',
         paddingVertical: 12,
@@ -122,16 +151,6 @@ const styles = StyleSheet.create({
     addButtonText: {
         color: '#FFF',
         fontSize: 18,
-        fontWeight: 'bold',
-    },
-    backButton: {
-        marginTop: 20,
-        paddingVertical: 10,
-        alignItems: 'center',
-    },
-    backButtonText: {
-        fontSize: 16,
-        color: '#003DA5',
         fontWeight: 'bold',
     },
 });
