@@ -64,10 +64,15 @@ Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experien
 
 ### 🎨 **Sketches de diseño**
 
-![Imagen de WhatsApp 2024-03-24 a las 17 12 09_d202c60c](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/e6c3e1fc-4943-46da-bd4a-b746947d8390)
-![Imagen de WhatsApp 2024-03-24 a las 17 12 08_5d8e6e52](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/702563e1-3674-4951-a2a6-76d7388fdd3c)
-
-
+![alt text](Sketch/1.jpeg)
+![alt text](Sketch/2.jpeg)
+![alt text](Sketch/3.jpeg)
+![alt text](Sketch/Sketch-Calificacion.jpeg)
+![alt text](Sketch/Sketch-Dispensacion.jpeg)
+![alt text](Sketch/Sketch-Medicamentos.jpeg)
+![alt text](Sketch/Sketch-NuevoMedicamento.jpeg)
+![alt text](Sketch/Sketch1.jpg)
+![alt text](Sketch/Sketch2.jpg)
 ---
 
 ## ⚙️ **Requerimientos Funcionales**
