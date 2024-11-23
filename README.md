@@ -73,6 +73,7 @@ Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experien
 ![alt text](Sketch/Sketch-NuevoMedicamento.jpeg)
 ![alt text](Sketch/Sketch1.jpg)
 ![alt text](Sketch/Sketch2.jpg)
+![alt text](Sketch/Solicitudes.jpg)
 ---
 
 ## ⚙️ **Requerimientos Funcionales**
