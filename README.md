@@ -18,7 +18,7 @@ Repositorio del módulo de **Farmacia Intrahospitalaria** para el **Hospital Pri
 ## 🎯 **Objetivo Principal**
 
 <div style="text-align: justify;">
-Implementar un sistema integral de gestión hospitalaria a través de un sitio web basado en **Vue.js**, con el fin de facilitar el trabajo de los médicos, mejorar la eficiencia operativa y fortalecer la administración y control del hospital.
+Crear una aplicación móvil que permita una gestión y administración del Hospital Privilage Care, a traves de herramientas de TICS; con el fin de facilitar el trabajo de los médicos, mejorar la eficiencia operativa y fortalecer la administración y control del hospital.
 
 En un entorno hospitalario dinámico y exigente, optimizar los procesos internos y mejorar la comunicación entre el personal médico y administrativo son esenciales. Con la creciente dependencia de la tecnología en el sector salud, aprovechar innovaciones tecnológicas será clave para alcanzar estos objetivos de manera efectiva y sostenible.
 </div>
