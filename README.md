@@ -1,4 +1,4 @@
-# Diseño En Figma Farnacia Intrahospitalaria
+# Diseño En Figma Farmacia Intrahospitalaria
 
 Link de Figma Modulo Farmacia https://www.figma.com/design/OBYpnqY6tCk7NGEkiwAfN6/Farmacia?node-id=0-1&t=u2AOHZlf6MhqdV7E-1
 
