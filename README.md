@@ -76,6 +76,38 @@ Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experien
 ![alt text](Sketch/Solicitudes.jpg)
 ---
 
+### 🎨 **Wireframes**
+
+<p align="center">
+  <img src="Diseño/AcercaDe.PNG" alt="Acerca De" width="46%">
+  <img src="Diseño/calificacion_app.png" alt="Calificación App" width="40%">
+</p>
+
+![alt text](Diseño/Diseño1.png)
+![alt text](Diseño/Diseño2.png)
+![alt text](Diseño/Diseño3.png)
+
+<p align="center">
+  <img src="Diseño/dispensacion.png"  width="40%">
+  <img src="Diseño/Inventario.PNG"  width="60%">
+</p>
+
+<p align="center">
+  <img src="Diseño/Loading.png"  width="44%">
+  <img src="Diseño/Login.png"  width="45%">
+</p>
+<p align="center">
+  <img src="Diseño/medicamentos.png"  width="45%">
+  <img src="Diseño/nuevo_medicamento.png"  width="42.5%">
+</p>
+<p align="center">
+  <img src="Diseño/NuevoLote.PNG"  width="44%">
+  <img src="Diseño/Solicitudes.png"  width="41%">
+</p>
+
+
+---
+ 
 ## ⚙️ **Requerimientos Funcionales**
 
 | **RF**  | **Requisito**                 | **Descripción** |
