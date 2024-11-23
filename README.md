@@ -2,130 +2,125 @@
 
 Link de Figma Modulo Farmacia https://www.figma.com/design/OBYpnqY6tCk7NGEkiwAfN6/Farmacia?node-id=0-1&t=u2AOHZlf6MhqdV7E-1
 
+# 🏥 **Farmacia Intrahospitalaria**
 
-# Farmacia-Intrahospitalaria
-Repositorio del módulo de farmacia Intrahospitalaria
+Repositorio del módulo de **Farmacia Intrahospitalaria** para el **Hospital Privado Medical Care and Healing**
 
 ---
-
 ![logoCMD](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/7470cf19-54db-420b-bb88-bff501cbc681)
 
-## Organigrama CMD
+## 🌐 Organigrama CMD
 
-![Organigrama CMD](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/e1db8a13-486b-44c8-9e50-a94ab4cc5d96)
-
----
-
-### **Objetivo**
-Implementar un sistema integral de gestión hospitalaria a través de un sitio web basado en tecnologías modernas como **Vue.js**, con el fin de facilitar el trabajo de los médicos, mejorar la eficiencia operativa y fortalecer la administración y control del hospital.
-
-En un entorno hospitalario dinámico y exigente, es fundamental contar con herramientas que permitan optimizar los procesos internos, mejorar la comunicación entre el personal médico y administrativo, y garantizar una gestión eficiente de los recursos. Con la creciente dependencia de la tecnología en el sector de la salud, es imperativo aprovechar las últimas innovaciones para alcanzar estos objetivos de manera efectiva y sostenible.
+![OrganigramaCMD](https://drive.google.com/uc?export=view&id=1FfywTxNxXyQ5ZdvVWzSQ3lRtLfz0klz4)
 
 ---
 
-### **Objetivos Específicos**
+## 🎯 **Objetivo Principal**
 
-1. **Desarrollar una interfaz de usuario intuitiva utilizando Vue.js**  
-   Diseñar y desarrollar una interfaz de usuario atractiva y fácil de usar que permita a los usuarios acceder de manera eficiente a las funciones del sistema.
+<div style="text-align: justify;">
+Implementar un sistema integral de gestión hospitalaria a través de un sitio web basado en **Vue.js**, con el fin de facilitar el trabajo de los médicos, mejorar la eficiencia operativa y fortalecer la administración y control del hospital.
 
-2. **Integrar un sistema de gestión de base de datos utilizando MySQL**  
-   Diseñar la estructura de la base de datos para almacenar de manera segura y eficiente la información médica, administrativa y operativa del hospital.
-
-3. **Automatizar la gestión de citas médicas y agendas**  
-   Desarrollar un módulo que permita a los pacientes programar citas médicas de manera online, mejorando la puntualidad y eficiencia en la atención.
-
-4. **Optimizar la gestión de expedientes médicos electrónicos**  
-   Implementar un sistema electrónico de registros médicos que permita un acceso rápido y seguro a la información del paciente.
-
-5. **Facilitar la comunicación interna y externa**  
-   Integrar un sistema de mensajería interna para mantener al personal médico y administrativo informado sobre eventos importantes.
-
-6. **Implementar un sistema de gestión de recursos hospitalarios**  
-   Desarrollar un módulo para optimizar la asignación de recursos hospitalarios como camas, equipos médicos y personal.
-
-7. **Capacitar al personal en el uso efectivo del sistema**  
-   Diseñar programas de capacitación para garantizar una rápida adaptación y aceptación del sistema.
+En un entorno hospitalario dinámico y exigente, optimizar los procesos internos y mejorar la comunicación entre el personal médico y administrativo son esenciales. Con la creciente dependencia de la tecnología en el sector salud, aprovechar innovaciones tecnológicas será clave para alcanzar estos objetivos de manera efectiva y sostenible.
+</div>
 
 ---
 
-### **Contexto de Negocio**
+## 🎯 **Objetivos Específicos**
 
-En un mundo donde la demanda de servicios médicos de calidad está en constante aumento, el **Hospital Privado Medical Care and Healing** se posiciona como una institución líder en la atención médica integral. Con una amplia gama de servicios médicos especializados, el hospital se enfoca en la mejora continua para optimizar sus procesos internos y ofrecer la mejor experiencia a sus pacientes.
+### 1️⃣ **Desarrollar una interfaz intuitiva**  
+Diseñar y desarrollar una interfaz de usuario atractiva y fácil de usar que permita a los usuarios acceder de manera eficiente a las funciones del sistema.
 
-El hospital se compromete con la promoción de la salud y la prevención de enfermedades, ofreciendo programas comunitarios y colaboraciones para mejorar el bienestar de la población en general.
+### 2️⃣ **Integrar un sistema de gestión de base de datos (MySQL)**  
+Diseñar la estructura de la base de datos para almacenar de manera segura y eficiente la información médica y operativa del hospital.
 
----
+### 3️⃣ **Automatizar la gestión de citas médicas**  
+Desarrollar un módulo que permita a los pacientes programar citas médicas de manera online, evitando conflictos de horarios y mejorando la eficiencia.
 
-### **Propuesta de Frontend**
+### 4️⃣ **Optimizar la gestión de expedientes médicos electrónicos**  
+Implementar un sistema electrónico de registros médicos para facilitar el acceso rápido y seguro a los historiales clínicos.
 
-#### **Sketches**
-![Imagen de WhatsApp 2024-03-24 a las 17 12 09_d202c60c](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/e6c3e1fc-4943-46da-bd4a-b746947d8390)
-![Imagen de WhatsApp 2024-03-24 a las 17 12 08_5d8e6e52](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/702563e1-3674-4951-a2a6-76d7388fdd3c)
-![Imagen de WhatsApp 2024-03-24 a las 17 12 08_2c1033bd](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/14893482-dfeb-4442-8c28-3f5369b70055)
+### 5️⃣ **Facilitar la comunicación interna y externa**  
+Integrar un sistema de mensajería interna para una comunicación rápida y segura entre el personal médico y administrativo.
 
----
+### 6️⃣ **Implementar un sistema de gestión de recursos hospitalarios**  
+Desarrollar un módulo para la asignación eficiente de recursos como camas, equipos médicos y personal.
 
-### **Requerimientos Funcionales**
-
-| **RF** | **Nombre del Requisito** | **Descripción del Requisito** |
-|--------|--------------------------|--------------------------------|
-| RF1    | Inicio de Sesión         | Permitir a los usuarios autorizados iniciar sesión en el sistema. |
-| RF2    | Modificación de Datos de Usuario | Permitir a los usuarios modificar su información personal. |
-| RF3    | Cierre de Sesión         | Permitir a los usuarios salir de su sesión de forma segura. |
-| RF4    | Recuperación de Contraseña | Proporcionar un proceso seguro para recuperar contraseñas olvidadas. |
-| RF5    | Interfaz Intuitiva       | Proporcionar una interfaz fácil de usar y navegar. |
-| RF6    | Catálogo de Medicamentos | Mostrar un catálogo completo de medicamentos disponibles. |
-| RF7    | Búsqueda de Medicamentos | Permitir la búsqueda de medicamentos por nombre o categoría. |
-| RF8    | Detalles del Medicamento | Mostrar información detallada sobre cada medicamento. |
-| RF9    | Agregar al Carrito       | Permitir agregar medicamentos al carrito de compras. |
-| RF10   | Gestión del Carrito      | Permitir ver y modificar el contenido del carrito. |
-
-...
+### 7️⃣ **Capacitar al personal en el uso efectivo del sistema**  
+Diseñar programas de capacitación para el personal médico y administrativo, asegurando un uso efectivo del sistema.
 
 ---
 
-### **Requerimientos No Funcionales**
+## 🏥 **Contexto de Negocio**
 
-| **RNF** | **Nombre del Requisito** | **Descripción del Requisito** |
-|---------|--------------------------|--------------------------------|
-| RNF1    | Seguridad de Datos       | Garantizar la protección y confidencialidad de los datos del paciente. |
-| RNF2    | Cumplimiento de Normativas | Asegurar el cumplimiento con regulaciones médicas y de privacidad. |
-| RNF3    | Tiempo de Respuesta      | Garantizar tiempos de respuesta rápidos para la carga de páginas. |
-| RNF4    | Escalabilidad            | El sistema debe poder escalar eficientemente ante aumentos de carga. |
+<div style="text-align: justify;">
+**Hospital Privado Medical Care and Healing** es una institución líder en el sector salud, comprometida con la mejora continua y la atención integral de los pacientes. Ofrece una amplia gama de servicios médicos, incluidos tratamientos especializados y cuidados intensivos, con el objetivo de proporcionar una atención de calidad y promover la salud preventiva.
 
----
-
-### **Reglas de Negocio**
-
-1. **Validación de Prescripción Médica**: Antes de dispensar cualquier medicamento, se debe validar la prescripción médica.
-2. **Registro de Medicamentos en Inventario**: Mantener un registro actualizado de todos los medicamentos en el inventario.
-3. **Alertas de Stock Crítico**: Implementar alertas para notificar al personal sobre niveles bajos de stock.
-4. **Manejo de Medicamentos Vencidos**: El sistema debe identificar y marcar los medicamentos vencidos para su eliminación.
-5. **Registro de Ajustes en el Inventario**: Solo personal autorizado podrá realizar ajustes en el inventario.
+Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experiencia del paciente y optimizar sus procesos internos a través de un sistema de gestión integral.
+</div>
 
 ---
 
-### **Tablas SQL**
+## 💻 **Propuesta de Frontend**
 
-**PROPIETARIO (OWNER)**  
-1. Dispensación medicamentos  
-2. Detalles dispensación  
-3. Lotes medicamentos  
-4. Detalles lotes  
+### 🎨 **Sketches de diseño**
 
-**LECTOR (READER)**  
-1. Personal Médico  
-2. Receta Médica  
-3. Receta Médica Detalles  
-4. Citas
+![Imagen de Google Drive](https://drive.google.com/uc?export=view&id=1FfywTxNxXyQ5ZdvVWzSQ3lRtLfz0klz4)
 
 ---
 
-### **Modelo Relacional**
+## ⚙️ **Requerimientos Funcionales**
+
+| **RF**  | **Requisito**                 | **Descripción** |
+|---------|-------------------------------|-----------------|
+| RF1     | **Inicio de sesión**           | Permitir a los usuarios autorizados iniciar sesión. |
+| RF2     | **Modificación de datos**      | Permitir modificar datos personales dentro del sistema. |
+| RF3     | **Cierre de sesión**           | Permitir cerrar sesión de manera segura. |
+| RF4     | **Recuperación de contraseña** | Proceso seguro para recuperar contraseñas olvidadas. |
+| RF5     | **Interfaz intuitiva**         | Interfaz fácil de usar y navegar. |
+| RF6     | **Catálogo de medicamentos**   | Mostrar un catálogo completo de medicamentos. |
+| RF7     | **Búsqueda de medicamentos**   | Permitir búsqueda por nombre o categoría. |
+| RF8     | **Detalles del medicamento**   | Mostrar información detallada de cada medicamento. |
+| ...     | ...                           | ...             |
+
+---
+
+## 🔒 **Requerimientos No Funcionales**
+
+| **RNF** | **Requisito**                 | **Descripción** |
+|---------|-------------------------------|-----------------|
+| RNF1    | **Seguridad de datos**         | Garantizar la protección de datos de pacientes y farmacia. |
+| RNF2    | **Cumplimiento normativo**     | Asegurar que el sistema cumpla con regulaciones médicas y de privacidad. |
+| RNF3    | **Tiempo de respuesta**        | Garantizar tiempos de respuesta rápidos. |
+| RNF4    | **Escalabilidad**              | El sistema debe manejar aumentos repentinos en la carga de trabajo. |
+| RNF5    | **Disponibilidad**             | El sistema debe estar disponible 24/7. |
+
+---
+
+## 📊 **Modelo Relacional**
 
 ![Modelo Entidad-Relación](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/7771cde7-a9e3-494e-8c03-0935abc9a3f1)
 
 ---
 
-Gracias por visitar el repositorio de **Farmacia Intrahospitalaria**. ¡Contribuye y mejora este sistema integral de gestión hospitalaria!
+## ⚖️ **Reglas de Negocio**
+
+1. **Validación de prescripción médica**: Validar la prescripción médica antes de dispensar medicamentos.
+2. **Registro de medicamentos en inventario**: Mantener un registro actualizado de todos los medicamentos.
+3. **Alertas de stock bajo**: Notificar cuando el stock de un medicamento crítico esté por debajo del umbral.
+4. **Manejo de medicamentos vencidos**: Identificar y marcar medicamentos vencidos para su eliminación.
+
+---
+
+### ✨ **Conclusión**
+
+<div style="text-align: justify;">
+Este sistema busca mejorar la experiencia de los pacientes y optimizar la gestión interna del hospital. Con la implementación de las últimas tecnologías y estándares de seguridad, se espera mejorar la eficiencia operativa, facilitar la toma de decisiones y contribuir al bienestar de los pacientes.
+</div>
+
+---
+
+> **"El mejor cuidado comienza con la tecnología más avanzada."**  
+> **Hospital Medical Care and Healing**
+
+
 
