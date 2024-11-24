@@ -6,7 +6,7 @@ import LoginScreen from '../screens/loginScreen';
 import RegisterScreen from '../screens/registerScreen';
 import ResetPasswordScreen from '../screens/resetPassword';
 // Pnatallas principales
-import SplashScreen from '../screens/splashScreen';
+import LoadingScreen from '../screens/loadingScreen';
 import HomeScreen from '../screens/modules/homeScreen';
 // Seccion Consumibles
 import ConsumiblesScreen from '../screens/modules/consumibles/homeConsumibles';
@@ -24,7 +24,7 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
         {/* Pnatallas Principales */}
-        <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Splash" component={LoadingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ headerShown: false }}/>
