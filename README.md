@@ -27,26 +27,21 @@ En un entorno hospitalario dinámico y exigente, optimizar los procesos internos
 
 ## 🎯 **Objetivos Específicos**
 
-### 1️⃣ **Desarrollar una interfaz intuitiva**  
-Diseñar y desarrollar una interfaz de usuario atractiva y fácil de usar que permita a los usuarios acceder de manera eficiente a las funciones del sistema.
+### 1️⃣ **Recabar los requerimientos del modulo mediante técnicas de recolección (Encuestas)**  
 
-### 2️⃣ **Integrar un sistema de gestión de base de datos (MySQL)**  
-Diseñar la estructura de la base de datos para almacenar de manera segura y eficiente la información médica y operativa del hospital.
+### 2️⃣ **Diselar los Sketch (Propuesta de Frontend)**  
 
-### 3️⃣ **Automatizar la gestión de citas médicas**  
-Desarrollar un módulo que permita a los pacientes programar citas médicas de manera online, evitando conflictos de horarios y mejorando la eficiencia.
+### 3️⃣ **Diseñar los Mockups**  
 
-### 4️⃣ **Optimizar la gestión de expedientes médicos electrónicos**  
-Implementar un sistema electrónico de registros médicos para facilitar el acceso rápido y seguro a los historiales clínicos.
+### 4️⃣ **Seleccionar las tecnologías**  
 
-### 5️⃣ **Facilitar la comunicación interna y externa**  
-Integrar un sistema de mensajería interna para una comunicación rápida y segura entre el personal médico y administrativo.
+### 5️⃣ **Diseñar la base de datos (SQL)**  
 
-### 6️⃣ **Implementar un sistema de gestión de recursos hospitalarios**  
-Desarrollar un módulo para la asignación eficiente de recursos como camas, equipos médicos y personal.
+### 6️⃣ **Desarrollar funcionalidades del modulo (Backend)**  
 
-### 7️⃣ **Capacitar al personal en el uso efectivo del sistema**  
-Diseñar programas de capacitación para el personal médico y administrativo, asegurando un uso efectivo del sistema.
+### 7️⃣ **Crear prototipo del modulo Farmacia**  
+
+### 8️⃣ **Elaborar un manual de capacitación al personal hospitalario sobre el modulo Farmacia**
 
 ---
 
