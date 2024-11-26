@@ -10,12 +10,16 @@ import LoadingScreen from '../screens/loadingScreen';
 import HomeScreen from '../screens/modules/homeScreen';
 // Seccion Consumibles
 import ConsumiblesScreen from '../screens/modules/consumibles/homeConsumibles';
-import AgregarConsumibleScreen from '../screens/modules/consumibles/comsumiblesRegister';
+import AgregarConsumibleScreen from '../screens/modules/consumibles/registerConsumibles';
 import ActualizarConsumibleScreen from '../screens/modules/consumibles/updateConsumible';
 // Seccion de Lotes
 import LotesScreen from '../screens/modules/lotes/homeLotes';
-import AgregarLoteScreen from '../screens/modules/lotes/loteRegister';
+import AgregarLoteScreen from '../screens/modules/lotes/registerLote';
 import ActualizarLoteScreen from '../screens/modules/lotes/updateLote';
+// Seccion de Medicamentos
+import MedicamentosScreen from '../screens/modules/medicamentos/homeMedicamentos';
+import AgregarMedicamentoScreen from '../screens/modules/medicamentos/registerMedicamentos';
+import ActualizarMedicamentoScreen from '../screens/modules/medicamentos/updateMedicamentos';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +41,10 @@ const AppNavigator = () => {
         <Stack.Screen name="Lotes" component={LotesScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="AgregarLote" component={AgregarLoteScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="ActualizarLote" component={ActualizarLoteScreen} options={{ headerShown: false }}/>
+        {/* Medicamentos */}
+        <Stack.Screen name="Medicamentos" component={MedicamentosScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="AgregarMedicamento" component={AgregarMedicamentoScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="ActualizarMedicamento" component={ActualizarMedicamentoScreen} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
