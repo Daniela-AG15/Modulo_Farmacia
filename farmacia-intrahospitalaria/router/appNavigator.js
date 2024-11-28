@@ -20,6 +20,8 @@ import ActualizarLoteScreen from '../screens/modules/lotes/updateLote';
 import MedicamentosScreen from '../screens/modules/medicamentos/homeMedicamentos';
 import AgregarMedicamentoScreen from '../screens/modules/medicamentos/registerMedicamentos';
 import ActualizarMedicamentoScreen from '../screens/modules/medicamentos/updateMedicamentos';
+// Graficas
+import DashboardCharts from '../screens/modules/graficas/graficas';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +47,8 @@ const AppNavigator = () => {
         <Stack.Screen name="Medicamentos" component={MedicamentosScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="AgregarMedicamento" component={AgregarMedicamentoScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="ActualizarMedicamento" component={ActualizarMedicamentoScreen} options={{ headerShown: false }}/>
+        {/* Graficas */}
+        <Stack.Screen name="Graficas" component={DashboardCharts} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

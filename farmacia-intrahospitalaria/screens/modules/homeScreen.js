@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     logoutButton: {
-        width: '90%',
+        width: '50%',
         backgroundColor: '#FF3B3B',
         padding: 16,
         borderRadius: 8,
