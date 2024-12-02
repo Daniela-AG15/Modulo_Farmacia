@@ -2,62 +2,63 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const MedicamentosScreen = ({ navigation }) => {
-    const [medicamentos, setMedicamentos] = useState([]);
+const HomeSolicitudes = ({ navigation }) => {
+    const [solicitudes, setSolicitudes] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredMedicamentos, setFilteredMedicamentos] = useState([]);
+    const [filteredSolicitudes, setFilteredSolicitudes] = useState([]);
 
     // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
             const data = [
-                { id: 1, nombre_Generico: 'Paracetamol', nombre_Comercial: 'Paracet', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '50' },
-                { id: 2, nombre_Generico: 'Ibuprofeno', nombre_Comercial: 'Ibux', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '30' },
-                { id: 3, nombre_Generico: 'Amoxicilina', nombre_Comercial: 'Amoxil', via_Administracion: 'Oral', presentacion: 'Cápsulas', cantidad: '20' },
-                { id: 4, nombre_Generico: 'Metformina', nombre_Comercial: 'Glucophage', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '60' },
-                { id: 5, nombre_Generico: 'Loratadina', nombre_Comercial: 'Clarityne', via_Administracion: 'Oral', presentacion: 'Jarabe', cantidad: '100 ml' }
+                { id: 1, paciente: 'Juan Pérez', servicio: 'Consulta General', prioridad: 'Alta', estatus: 'Pendiente' },
+                { id: 2, paciente: 'María López', servicio: 'Rayos X', prioridad: 'Media', estatus: 'Aprobada' },
+                { id: 3, paciente: 'Carlos García', servicio: 'Laboratorio', prioridad: 'Baja', estatus: 'Rechazada' },
             ];
-            setMedicamentos(data);
-            setFilteredMedicamentos(data);
+            setSolicitudes(data);
+            setFilteredSolicitudes(data);
         };
         fetchData();
     }, []);
 
-    // Filter consumibles based on search query
+    // Filtrar solicitudes basadas en la consulta de búsqueda
     useEffect(() => {
-        const filtered = medicamentos.filter((item) =>
-            item.nombre_Generico.toLowerCase().includes(searchQuery.toLowerCase())
+        const filtered = solicitudes.filter((item) =>
+            item.paciente.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setFilteredMedicamentos(filtered);
-    }, [searchQuery, medicamentos]);
+        setFilteredSolicitudes(filtered);
+    }, [searchQuery, solicitudes]);
 
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el consumible seleccionado
-        navigation.navigate('ActualizarMedicamento', { medicamentoData: item });
+        // Navegar a la pantalla de actualización, pasando la solicitud seleccionada
+        navigation.navigate('ActualizarSolicitud', { solicitudData: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del consumible, por ejemplo llamando a tu API
-        Alert.alert('Eliminar Medicamento', `¿Seguro que deseas eliminar el medicamento con id: ${id}?`, [
+        Alert.alert('Eliminar Solicitud', `¿Seguro que deseas eliminar la solicitud con ID: ${id}?`, [
             { text: 'Cancelar' },
-            { text: 'Eliminar', onPress: () => {
-                const updatedMedicamento = medicamentos.filter(item => item.id !== id);
-                setMedicamentos(updatedMedicamento);
-                setFilteredMedicamentos(updatedMedicamento);
-            }} 
+            { 
+                text: 'Eliminar', 
+                onPress: () => {
+                    const updatedSolicitudes = solicitudes.filter(item => item.id !== id);
+                    setSolicitudes(updatedSolicitudes);
+                    setFilteredSolicitudes(updatedSolicitudes);
+                }
+            }
         ]);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Medicamentos</Text>
+                <Text style={styles.headerTitle}>Solicitudes</Text>
             </View>
+
             {/* Barra de búsqueda */}
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Buscar consumibles..."
+                    placeholder="Buscar solicitudes..."
                     placeholderTextColor="#A9A9A9"
                     value={searchQuery}
                     onChangeText={setSearchQuery}
@@ -65,17 +66,16 @@ const MedicamentosScreen = ({ navigation }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de solicitudes */}
             <FlatList
-                data={filteredMedicamentos}
+                data={filteredSolicitudes}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Text style={styles.cardTitle}>Nombre Generico: {item.nombre_Generico}</Text>
-                        <Text style={styles.cardType}>Nombre Comercial: {item.nombre_Comercial}</Text>
-                        <Text style={styles.cardType}>Administracion: {item.via_Administracion}</Text>
-                        <Text style={styles.cardType}>Presentacion: {item.presentacion}</Text>
-                        <Text style={styles.cardType}>Tipo: {item.cantidad}</Text>
+                        <Text style={styles.cardTitle}>Paciente: {item.paciente}</Text>
+                        <Text style={styles.cardDetails}>Servicio: {item.servicio}</Text>
+                        <Text style={styles.cardDetails}>Prioridad: {item.prioridad}</Text>
+                        <Text style={styles.cardDetails}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -89,13 +89,13 @@ const MedicamentosScreen = ({ navigation }) => {
                     </View>
                 )}
                 contentContainerStyle={styles.listContent}
-                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron consumibles.</Text>}
+                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron solicitudes.</Text>}
             />
 
             {/* Botón de agregar */}
             <TouchableOpacity
                 style={styles.addButton}
-                onPress={() => navigation.navigate('AgregarMedicamento')}
+                onPress={() => navigation.navigate('AgregarSolicitud')}
             >
                 <Text style={styles.addButtonText}>+ Agregar</Text>
             </TouchableOpacity>
@@ -198,4 +198,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default MedicamentosScreen;
+export default HomeSolicitudes;

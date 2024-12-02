@@ -8,7 +8,7 @@ const HomeScreen = ({ navigation }) => {
         { title: 'Medicamentos', icon: 'thermometer-outline', route: 'Medicamentos' },
         { title: 'Lotes', icon: 'cube-outline', route: 'Lotes' },
         { title: 'Solicitudes', icon: 'clipboard-outline', route: 'Solicitudes' },
-        { title: 'Dispensación', icon: 'document-text-outline', route: 'Dispensacion' },
+        { title: 'Dispensacion', icon: 'document-text-outline', route: 'Dispensacion' },
         { title: 'Graficas', icon: 'bar-chart-outline', route: 'Graficas' },
     ];
 
