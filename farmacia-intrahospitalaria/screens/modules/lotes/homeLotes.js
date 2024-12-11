@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const LotesScreen = ({ navigation }) => {
+const LotesScreen = ({ navigation, route }) => {
     const [lotes, setLotes] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredLotes, setFilteredLotes] = useState([]);
@@ -11,9 +11,9 @@ const LotesScreen = ({ navigation }) => {
     useEffect(() => {
         const fetchData = async () => {
             const data = [
-                { id: 1, nombre: 'Paracetamol', cantidad: '50', precio: '$12', ubicacion: 'Superior' },
-                { id: 2, nombre: 'Neproxina', cantidad: '21', precio: '$23', ubicacion: 'Superior' },
-                { id: 3, nombre: 'Loratadina', cantidad: '30', precio: '$14', ubicacion: 'Superior' },
+                { id: 1, medicamento: 'Paracetamol',personalM: 'Dr. Smith',  clave: 'A123', estatus: 'Activo', costo: '$10', cantidad: '50', precio: '$12', ubicacion: 'Superior'},
+                { id: 2, medicamento: 'Neproxina',personalM: 'Dr. Johnson',   clave: 'B456', estatus: 'Inactivo', costo: '$15', cantidad: '21', precio: '$23', ubicacion: 'Superior',},
+                { id: 3, medicamento: 'Loratadina',personalM: 'Dr. Brown',   clave: 'C789', estatus: 'Activo', costo: '$12', cantidad: '30', precio: '$14', ubicacion: 'Superior',},
             ];
             setLotes(data);
             setFilteredLotes(data);
@@ -21,21 +21,32 @@ const LotesScreen = ({ navigation }) => {
         fetchData();
     }, []);
 
-    // Filter consumibles based on search query
+    // Filtrar lotes basado en la búsqueda
     useEffect(() => {
-        const filtered = lotes.filter((item) =>
-            item.nombre.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        setFilteredLotes(filtered);
+        if (searchQuery) {
+            const filtered = lotes.filter((item) =>
+                item.medicamento.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setFilteredLotes(filtered);
+        } else {
+            setFilteredLotes(lotes);
+        }
     }, [searchQuery, lotes]);
 
+    // Manejar la llegada de un nuevo lote desde AgregarLoteScreen
+    useEffect(() => {
+        if (route.params?.newLote) {
+            setLotes((prevLotes) => [...prevLotes, route.params.newLote]);
+        }
+    }, [route.params?.newLote]);
+
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el consumible seleccionado
-        navigation.navigate('ActualizarLote', { lote: item });
+        // Navegar a la pantalla de actualización, pasando el lote seleccionado
+        navigation.navigate('ActualizarLote', { loteData: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del consumible, por ejemplo llamando a tu API
+        // Aquí podrías manejar la eliminación del lote, por ejemplo llamando a tu API
         Alert.alert('Eliminar Lote', `¿Seguro que deseas eliminar el lote con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {
@@ -55,7 +66,7 @@ const LotesScreen = ({ navigation }) => {
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Buscar consumibles..."
+                    placeholder="Buscar lotes..."
                     placeholderTextColor="#A9A9A9"
                     value={searchQuery}
                     onChangeText={setSearchQuery}
@@ -63,16 +74,18 @@ const LotesScreen = ({ navigation }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de lotes */}
             <FlatList
                 data={filteredLotes}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Text style={styles.cardTitle}>{item.nombre}</Text>
-                        <Text style={styles.cardDescription}>{item.cantidad}</Text>
-                        <Text style={styles.cardType}>Tipo: {item.precio}</Text>
-                        <Text style={styles.cardType}>Tipo: {item.ubicacion}</Text>
+                        <Text style={styles.cardTitle}>{item.medicamento}</Text>
+                        <Text style={styles.cardType}>{item.personalM}</Text>
+                        <Text style={styles.cardType}>{item.medicamento}</Text>
+                        <Text style={styles.cardType}>{item.cantidad}</Text>
+                        <Text style={styles.cardType}>Precio: {item.precio}</Text>
+                        <Text style={styles.cardType}>Ubicación: {item.ubicacion}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -86,7 +99,7 @@ const LotesScreen = ({ navigation }) => {
                     </View>
                 )}
                 contentContainerStyle={styles.listContent}
-                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron consumibles.</Text>}
+                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron lotes.</Text>}
             />
 
             {/* Botón de agregar */}

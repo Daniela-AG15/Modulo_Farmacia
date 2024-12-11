@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const MedicamentosScreen = ({ navigation }) => {
+const MedicamentosScreen = ({ navigation, route }) => {
     const [medicamentos, setMedicamentos] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredMedicamentos, setFilteredMedicamentos] = useState([]);
@@ -11,19 +11,20 @@ const MedicamentosScreen = ({ navigation }) => {
     useEffect(() => {
         const fetchData = async () => {
             const data = [
-                { id: 1, nombre_Generico: 'Paracetamol', nombre_Comercial: 'Paracet', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '50' },
-                { id: 2, nombre_Generico: 'Ibuprofeno', nombre_Comercial: 'Ibux', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '30' },
-                { id: 3, nombre_Generico: 'Amoxicilina', nombre_Comercial: 'Amoxil', via_Administracion: 'Oral', presentacion: 'Cápsulas', cantidad: '20' },
-                { id: 4, nombre_Generico: 'Metformina', nombre_Comercial: 'Glucophage', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '60' },
-                { id: 5, nombre_Generico: 'Loratadina', nombre_Comercial: 'Clarityne', via_Administracion: 'Oral', presentacion: 'Jarabe', cantidad: '100 ml' }
+                { id: 1, nombre_Generico: 'Paracetamol', nombre_Comercial: 'Paracet', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '50', tipo: 'Fármaco', volumen: '500', estatus: 'Activo' },
+                { id: 2, nombre_Generico: 'Ibuprofeno', nombre_Comercial: 'Ibux', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '30', tipo: 'Antiinflamatorio', volumen: '200', estatus: 'Inactivo' },
+                { id: 3, nombre_Generico: 'Amoxicilina', nombre_Comercial: 'Amoxil', via_Administracion: 'Oral', presentacion: 'Cápsulas', cantidad: '20', tipo: 'Antibiótico', volumen: '100', estatus: 'Activo' },
+                { id: 4, nombre_Generico: 'Metformina', nombre_Comercial: 'Glucophage', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '60', tipo: 'Hipoglucemiante', volumen: '250', estatus: 'Inactivo' },
+                { id: 5, nombre_Generico: 'Loratadina', nombre_Comercial: 'Clarityne', via_Administracion: 'Oral', presentacion: 'Jarabe', cantidad: '100', tipo: 'Antihistamínico', volumen: '150', estatus: 'Activo' }
             ];
             setMedicamentos(data);
             setFilteredMedicamentos(data);
         };
+
         fetchData();
     }, []);
 
-    // Filter consumibles based on search query
+    // Filtrar medicamentos basado en la búsqueda
     useEffect(() => {
         const filtered = medicamentos.filter((item) =>
             item.nombre_Generico.toLowerCase().includes(searchQuery.toLowerCase())
@@ -31,20 +32,27 @@ const MedicamentosScreen = ({ navigation }) => {
         setFilteredMedicamentos(filtered);
     }, [searchQuery, medicamentos]);
 
+    // Manejar la llegada de un nuevo medicamento desde AgregarMedicamentoScreen
+    useEffect(() => {
+        if (route.params?.newMedicamento) {
+            setMedicamentos((prevMedicamentos) => [...prevMedicamentos, route.params.newMedicamento]);
+        }
+    }, [route.params?.newMedicamento]);
+
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el consumible seleccionado
+        // Navegar a la pantalla de actualización, pasando el medicamento seleccionado
         navigation.navigate('ActualizarMedicamento', { medicamentoData: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del consumible, por ejemplo llamando a tu API
+        // Aquí podrías manejar la eliminación del medicamento, por ejemplo llamando a tu API
         Alert.alert('Eliminar Medicamento', `¿Seguro que deseas eliminar el medicamento con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {
                 const updatedMedicamento = medicamentos.filter(item => item.id !== id);
                 setMedicamentos(updatedMedicamento);
                 setFilteredMedicamentos(updatedMedicamento);
-            }} 
+            }}
         ]);
     };
 
@@ -65,7 +73,7 @@ const MedicamentosScreen = ({ navigation }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de medicamentos */}
             <FlatList
                 data={filteredMedicamentos}
                 keyExtractor={(item) => item.id.toString()}
@@ -75,7 +83,9 @@ const MedicamentosScreen = ({ navigation }) => {
                         <Text style={styles.cardType}>Nombre Comercial: {item.nombre_Comercial}</Text>
                         <Text style={styles.cardType}>Administracion: {item.via_Administracion}</Text>
                         <Text style={styles.cardType}>Presentacion: {item.presentacion}</Text>
-                        <Text style={styles.cardType}>Tipo: {item.cantidad}</Text>
+                        <Text style={styles.cardType}>Tipo: {item.tipo}</Text>
+                        <Text style={styles.cardType}>Volumen: {item.volumen}</Text>
+                        <Text style={styles.cardType}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -152,11 +162,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#003DA5',
-    },
-    cardDescription: {
-        fontSize: 14,
-        color: '#555',
-        marginTop: 4,
     },
     cardType: {
         fontSize: 12,

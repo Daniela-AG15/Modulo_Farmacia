@@ -2,26 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConsumiblesScreen = ({ navigation }) => {
+const ConsumiblesScreen = ({ navigation, route }) => {
     const [consumibles, setConsumibles] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredConsumibles, setFilteredConsumibles] = useState([]);
 
-    // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
-            const data = [
-                { id: 1, nombre: 'Gasas', descripcion: 'Gasas estériles', tipo: 'Médico' },
-                { id: 2, nombre: 'Jeringas', descripcion: 'Jeringas de 5ml', tipo: 'Instrumental' },
-                { id: 3, nombre: 'Guantes', descripcion: 'Guantes desechables', tipo: 'Protección' },
-            ];
-            setConsumibles(data);
-            setFilteredConsumibles(data);
+            try {
+                const data = [
+                    { id: 1, nombre: 'Gasas', descripcion: 'Gasas estériles', cantidad: 100, tipo: 'Médico', departamento: 'Farmacia', estatus: 'Activo' },
+                    { id: 2, nombre: 'Jeringas', descripcion: 'Jeringas de 5ml', cantidad: 50, tipo: 'Instrumental', departamento: 'Urgencias', estatus: 'Activo' },
+                    { id: 3, nombre: 'Guantes', descripcion: 'Guantes desechables', cantidad: 200, tipo: 'Protección', departamento: 'Laboratorio', estatus: 'Inactivo' },
+                ];
+                setConsumibles(data);
+                setFilteredConsumibles(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                Alert.alert('Error', 'No se pudo obtener la lista de consumibles.');
+            }
         };
+    
         fetchData();
-    }, []);
+    }, []); // Sin dependencias ya que solo quieres que se ejecute una vez
+    
 
-    // Filter consumibles based on search query
     useEffect(() => {
         const filtered = consumibles.filter((item) =>
             item.nombre.toLowerCase().includes(searchQuery.toLowerCase())
@@ -29,13 +34,36 @@ const ConsumiblesScreen = ({ navigation }) => {
         setFilteredConsumibles(filtered);
     }, [searchQuery, consumibles]);
 
+    useEffect(() => {
+        if (route.params?.newConsumible) {
+            const newConsumible = route.params.newConsumible;
+            // Validar que el nuevo consumible tenga propiedades definidas antes de agregarlo
+            if (newConsumible && newConsumible.nombre && newConsumible.descripcion) {
+                // Verificar si el nuevo consumible ya existe en el array
+                const existingConsumible = consumibles.find(item => item.id === newConsumible.id);
+                if (!existingConsumible) {
+                    setConsumibles((prevConsumibles) => [
+                        ...prevConsumibles,
+                        newConsumible,
+                    ]);
+                    setFilteredConsumibles((prevFiltered) => [
+                        ...prevFiltered,
+                        newConsumible,
+                    ]);
+                } else {
+                    console.warn('El consumible ya está registrado.');
+                }
+            } else {
+                console.warn('New consumible data is incomplete or invalid.');
+            }
+        }
+    }, [route.params?.newConsumible]);
+
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el consumible seleccionado
         navigation.navigate('ActualizarConsumible', { consumible: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del consumible, por ejemplo llamando a tu API
         Alert.alert('Eliminar Consumible', `¿Seguro que deseas eliminar el consumible con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {
@@ -71,7 +99,10 @@ const ConsumiblesScreen = ({ navigation }) => {
                     <View style={styles.card}>
                         <Text style={styles.cardTitle}>{item.nombre}</Text>
                         <Text style={styles.cardDescription}>{item.descripcion}</Text>
-                        <Text style={styles.cardType}>Tipo: {item.tipo}</Text>
+                        <Text style={styles.cardDescription}>Cantidad: {item.cantidad}</Text>
+                        <Text style={styles.cardDescription}>Tipo: {item.tipo}</Text>
+                        <Text style={styles.cardDescription}>Departamento: {item.departamento}</Text>
+                        <Text style={styles.cardDescription}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>

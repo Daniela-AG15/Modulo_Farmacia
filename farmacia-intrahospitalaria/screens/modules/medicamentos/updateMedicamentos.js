@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const ActualizarMedicamentoScreen = ({ route, navigation }) => {
     const { medicamentoData } = route.params; 
@@ -27,8 +28,11 @@ const ActualizarMedicamentoScreen = ({ route, navigation }) => {
             estatus,
         };
 
+        // Aquí puedes hacer la llamada a tu API para actualizar el medicamento en la base de datos
         Alert.alert('Medicamento Actualizado', `Se ha actualizado el medicamento: ${nombre_Comercial}`);
-        navigation.goBack(); // Regresa a la pantalla anterior
+
+        // Regresa a la pantalla anterior
+        navigation.goBack();
     };
 
     return (
@@ -92,6 +96,7 @@ const ActualizarMedicamentoScreen = ({ route, navigation }) => {
             <TextInput
                 style={styles.input}
                 placeholder="Volumen"
+                keyboardType="numeric"
                 value={volumen}
                 onChangeText={setVolumen}
             />
@@ -115,7 +120,14 @@ const ActualizarMedicamentoScreen = ({ route, navigation }) => {
             </Picker>
 
             <TouchableOpacity style={styles.addButton} onPress={handleActualizarMedicamento}>
-                <Text style={styles.addButtonText}>Actualizar</Text>
+            <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Actualizar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -160,8 +172,14 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,

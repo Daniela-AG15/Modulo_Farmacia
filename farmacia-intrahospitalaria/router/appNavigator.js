@@ -4,10 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 // Login
 import LoginScreen from '../screens/loginScreen';
 import RegisterScreen from '../screens/registerScreen';
+import RegisterUserScreen from '../screens/registerUser';
 import ResetPasswordScreen from '../screens/resetPassword';
 // Pnatallas principales
 import LoadingScreen from '../screens/loadingScreen';
 import HomeScreen from '../screens/modules/homeScreen';
+import TerminosYCondicionesScreen from '../screens/TC';
 // Seccion Consumibles
 import ConsumiblesScreen from '../screens/modules/consumibles/homeConsumibles';
 import AgregarConsumibleScreen from '../screens/modules/consumibles/registerConsumibles';
@@ -41,6 +43,8 @@ const AppNavigator = () => {
         <Stack.Screen name="Splash" component={LoadingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="TC" component={TerminosYCondicionesScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="RegisterUser" component={RegisterUserScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
         {/* Consumibles */}

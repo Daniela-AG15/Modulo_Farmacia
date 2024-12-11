@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const AgregarConsumibleScreen = ({ navigation }) => {
+const AgregarConsumibleScreen = ({ navigation, route }) => {
     const [nombre, setNombre] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [cantidad, setCantidad] = useState('');
@@ -10,9 +11,9 @@ const AgregarConsumibleScreen = ({ navigation }) => {
     const [departamento, setDepartamento] = useState('');
     const [estatus, setEstatus] = useState('');
 
-    // Simulación de agregar un consumible
     const handleAgregarConsumible = () => {
         const newConsumible = {
+            id: new Date().getTime().toString(), // Genera un ID único basado en la fecha
             nombre,
             descripcion,
             cantidad,
@@ -21,19 +22,21 @@ const AgregarConsumibleScreen = ({ navigation }) => {
             estatus,
         };
 
-        Alert.alert('Consumible Agregado', `Se ha agregado el consumible: ${nombre}`);
-
-        navigation.goBack();
+        // Validar que todos los campos estén completos antes de agregar
+        if (newConsumible.nombre && newConsumible.descripcion && newConsumible.cantidad && newConsumible.tipo && newConsumible.departamento && newConsumible.estatus) {
+            // Regresar a la pantalla de Consumibles y actualizar la lista de consumibles
+            navigation.navigate('Consumibles', { newConsumible });
+        } else {
+            Alert.alert('Error', 'Todos los campos deben estar completos.');
+        }
     };
 
     return (
         <View style={styles.container}>
-            {/* Título */}
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Registrar Consumible</Text>
             </View>
 
-            {/* Formulario */}
             <TextInput
                 style={styles.input}
                 placeholder="Nombre"
@@ -54,7 +57,6 @@ const AgregarConsumibleScreen = ({ navigation }) => {
                 onChangeText={setCantidad}
             />
 
-            {/* Selector de Tipo */}
             <Text style={styles.label}>Tipo</Text>
             <Picker
                 selectedValue={tipo}
@@ -67,7 +69,6 @@ const AgregarConsumibleScreen = ({ navigation }) => {
                 <Picker.Item label="Instrumento" value="Instrumento" />
             </Picker>
 
-            {/* Selector de Departamento */}
             <Text style={styles.label}>Departamento</Text>
             <Picker
                 selectedValue={departamento}
@@ -80,7 +81,6 @@ const AgregarConsumibleScreen = ({ navigation }) => {
                 <Picker.Item label="Laboratorio" value="Laboratorio" />
             </Picker>
 
-            {/* Selector de Estatus */}
             <Text style={styles.label}>Estatus</Text>
             <Picker
                 selectedValue={estatus}
@@ -92,9 +92,15 @@ const AgregarConsumibleScreen = ({ navigation }) => {
                 <Picker.Item label="Inactivo" value="Inactivo" />
             </Picker>
 
-            {/* Botón de agregar */}
             <TouchableOpacity style={styles.addButton} onPress={handleAgregarConsumible}>
-                <Text style={styles.addButtonText}>Agregar</Text>
+                <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Agregar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -139,8 +145,14 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,

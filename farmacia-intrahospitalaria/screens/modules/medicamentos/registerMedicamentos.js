@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const AgregarMedicamentoScreen = ({ navigation }) => {
+const AgregarMedicamentoScreen = ({ navigation, route }) => {
     const [nombreC, setnombreC] = useState('');
     const [nombreG, setnombreG] = useState('');
     const [viaAdministracion, setviaAdministracion] = useState('');
@@ -15,8 +16,9 @@ const AgregarMedicamentoScreen = ({ navigation }) => {
     // Simulación de agregar un consumible
     const handleAgregarLote = () => {
         const newMedicamento = {
-            nombreC,
-            nombreG,
+            id: Date.now(), // Generar un ID único para el nuevo medicamento
+            nombre_Generico: nombreG,
+            nombre_Comercial: nombreC,
             viaAdministracion,
             presentacion,
             tipo,
@@ -25,11 +27,11 @@ const AgregarMedicamentoScreen = ({ navigation }) => {
             estatus
         };
 
-        Alert.alert('Medicamento Agregado', `Se ha agregado el medicamento: ${nombreC, nombreG}`);
+        // Enviar el nuevo medicamento a la pantalla anterior
+        navigation.navigate('Medicamentos', { newMedicamento });
 
-        navigation.goBack();
+        Alert.alert('Medicamento Agregado', `Se ha agregado el medicamento: ${nombreC}, ${nombreG}`);
     };
-
     return (
         <View style={styles.container}>
             {/* Título */}
@@ -100,7 +102,7 @@ const AgregarMedicamentoScreen = ({ navigation }) => {
             <TextInput
                 style={styles.input}
                 placeholder="Volumen"
-                keyboardType="text"
+                keyboardType="numeric"
                 value={volumen}
                 onChangeText={setVolumen}
             />
@@ -128,7 +130,14 @@ const AgregarMedicamentoScreen = ({ navigation }) => {
 
             {/* Botón de agregar */}
             <TouchableOpacity style={styles.addButton} onPress={handleAgregarLote}>
-                <Text style={styles.addButtonText}>Agregar</Text>
+            <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Agregar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -173,8 +182,14 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,
