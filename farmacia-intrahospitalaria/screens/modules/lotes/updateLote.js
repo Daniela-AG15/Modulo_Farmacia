@@ -25,11 +25,8 @@ const ActualizarLoteScreen = ({ route, navigation }) => {
             cantidad,
             ubicacion,
         };
-
-        // Aquí puedes hacer la llamada a tu API para actualizar el lote en la base de datos
         Alert.alert('Lote Actualizado', `Se ha actualizado el lote: ${medicamento}`);
 
-        // Regresa a la pantalla anterior
         navigation.goBack();
     };
 

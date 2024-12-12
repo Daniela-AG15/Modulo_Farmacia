@@ -27,11 +27,8 @@ const ActualizarMedicamentoScreen = ({ route, navigation }) => {
             cantidad,
             estatus,
         };
-
-        // Aquí puedes hacer la llamada a tu API para actualizar el medicamento en la base de datos
         Alert.alert('Medicamento Actualizado', `Se ha actualizado el medicamento: ${nombre_Comercial}`);
 
-        // Regresa a la pantalla anterior
         navigation.goBack();
     };
 

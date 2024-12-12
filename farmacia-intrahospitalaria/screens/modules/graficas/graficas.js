@@ -6,7 +6,7 @@ const DashboardCharts = () => {
     const screenWidth = Dimensions.get('window').width;
     const chartRef = useRef(null);
 
-    // Gráfico de prioridad de estatus (como pie chart)
+    // Gráfico de prioridad de estatus 
     const pieChartData = [
         { name: 'Urgente', population: 10, color: '#FF0000', legendFontColor: '#7F7F7F', legendFontSize: 12 },
         { name: 'Alta', population: 15, color: '#FFA500', legendFontColor: '#7F7F7F', legendFontSize: 12 },
@@ -15,7 +15,7 @@ const DashboardCharts = () => {
         { name: 'Normal', population: 50, color: '#0000FF', legendFontColor: '#7F7F7F', legendFontSize: 12 },
     ];
 
-    // Datos para el gráfico de estado de solicitudes (como pie chart)
+    // Datos para el gráfico de estado de solicitudes
     const pieChartEstadoSolicitudesData = [
         { name: 'Registrada', population: 50, color: '#FF0000', legendFontColor: '#7F7F7F', legendFontSize: 12 },
         { name: 'Programada', population: 10, color: '#FFA500', legendFontColor: '#7F7F7F', legendFontSize: 12 },
@@ -25,13 +25,13 @@ const DashboardCharts = () => {
         { name: 'Realizada', population: 60, color: '#FF6347', legendFontColor: '#7F7F7F', legendFontSize: 12 },
     ];
 
-    // Gráfico de estatus de medicamentos (como pie chart)
+    // Gráfico de estatus de medicamentos
     const pieChartMedicamentosEstatusData = [
         { name: 'Activo', population: 40, color: '#36A2EB', legendFontColor: '#7F7F7F', legendFontSize: 12 },
         { name: 'Inactivo', population: 10, color: '#FFCE56', legendFontColor: '#7F7F7F', legendFontSize: 12 },
     ];
 
-    // Gráfico de tipos de consumibles (como pie chart)
+    // Gráfico de tipos de consumibles
     const pieChartConsumiblesTipoData = [
         { name: 'Material', population: 20, color: '#FF6384', legendFontColor: '#7F7F7F', legendFontSize: 12 },
         { name: 'Equipo', population: 25, color: '#36A2EB', legendFontColor: '#7F7F7F', legendFontSize: 12 },

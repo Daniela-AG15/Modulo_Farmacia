@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const ActualizarDispensacionScreen = ({ route, navigation }) => {
-    const { dispensacion } = route.params; // Los datos de la dispensación vienen como parámetro
+    const { dispensacion } = route.params; 
 
-    // Estados para los campos del formulario
     const [recetaId, setRecetaId] = useState('');
     const [medicoId, setMedicoId] = useState('');
     const [solicitudId, setSolicitudId] = useState('');
@@ -15,7 +15,6 @@ const ActualizarDispensacionScreen = ({ route, navigation }) => {
     const [total, setTotal] = useState('');
     const [costos, setCostos] = useState('');
 
-    // Cargar los datos de la dispensación al montar el componente
     useEffect(() => {
         if (dispensacion) {
             setRecetaId(dispensacion.recetaId);
@@ -41,9 +40,8 @@ const ActualizarDispensacionScreen = ({ route, navigation }) => {
             costos,
         };
 
-        // Simulación de actualización
         Alert.alert('Dispensación Actualizada', `Se han actualizado los datos de la dispensación con receta ID: ${recetaId}`);
-        navigation.goBack(); // Regresar a la pantalla anterior
+        navigation.goBack();
     };
 
     return (
@@ -146,7 +144,14 @@ const ActualizarDispensacionScreen = ({ route, navigation }) => {
 
             {/* Botón de guardar cambios */}
             <TouchableOpacity style={styles.addButton} onPress={handleActualizarDispensacion}>
-                <Text style={styles.addButtonText}>Actualizar</Text>
+                <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Actualizar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -191,13 +196,18 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,
         alignItems: 'center',
-        marginTop: 20,
     },
     addButtonText: {
         color: '#FFF',

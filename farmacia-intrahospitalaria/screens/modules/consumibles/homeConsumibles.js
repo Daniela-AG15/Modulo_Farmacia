@@ -24,7 +24,7 @@ const ConsumiblesScreen = ({ navigation, route }) => {
         };
     
         fetchData();
-    }, []); // Sin dependencias ya que solo quieres que se ejecute una vez
+    }, []);
     
 
     useEffect(() => {
@@ -37,9 +37,7 @@ const ConsumiblesScreen = ({ navigation, route }) => {
     useEffect(() => {
         if (route.params?.newConsumible) {
             const newConsumible = route.params.newConsumible;
-            // Validar que el nuevo consumible tenga propiedades definidas antes de agregarlo
             if (newConsumible && newConsumible.nombre && newConsumible.descripcion) {
-                // Verificar si el nuevo consumible ya existe en el array
                 const existingConsumible = consumibles.find(item => item.id === newConsumible.id);
                 if (!existingConsumible) {
                     setConsumibles((prevConsumibles) => [

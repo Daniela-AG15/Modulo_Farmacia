@@ -13,7 +13,7 @@ const AgregarConsumibleScreen = ({ navigation, route }) => {
 
     const handleAgregarConsumible = () => {
         const newConsumible = {
-            id: new Date().getTime().toString(), // Genera un ID único basado en la fecha
+            id: new Date().getTime().toString(),
             nombre,
             descripcion,
             cantidad,
@@ -22,9 +22,7 @@ const AgregarConsumibleScreen = ({ navigation, route }) => {
             estatus,
         };
 
-        // Validar que todos los campos estén completos antes de agregar
         if (newConsumible.nombre && newConsumible.descripcion && newConsumible.cantidad && newConsumible.tipo && newConsumible.departamento && newConsumible.estatus) {
-            // Regresar a la pantalla de Consumibles y actualizar la lista de consumibles
             navigation.navigate('Consumibles', { newConsumible });
         } else {
             Alert.alert('Error', 'Todos los campos deben estar completos.');

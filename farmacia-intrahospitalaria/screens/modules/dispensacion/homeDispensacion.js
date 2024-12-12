@@ -7,7 +7,6 @@ const HomeDispensacion = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredDispensaciones, setFilteredDispensaciones] = useState([]);
 
-    // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
             const data = [
@@ -21,7 +20,6 @@ const HomeDispensacion = ({ navigation }) => {
         fetchData();
     }, []);
 
-    // Filtrar dispensaciones basadas en la consulta de búsqueda
     useEffect(() => {
         const filtered = dispensaciones.filter((item) =>
             item.medicamento.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,7 +28,6 @@ const HomeDispensacion = ({ navigation }) => {
     }, [searchQuery, dispensaciones]);
 
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando la dispensación seleccionada
         navigation.navigate('ActualizarDispensacion', { dispensacionData: item });
     };
 

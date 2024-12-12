@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const ActualizarSolicitudScreen = ({ route, navigation }) => {
     const { solicitud } = route.params; // Los datos de la solicitud vienen como parámetro
@@ -29,6 +30,7 @@ const ActualizarSolicitudScreen = ({ route, navigation }) => {
 
     const handleActualizarSolicitud = () => {
         const solicitudActualizada = {
+            id: solicitud.id,
             paciente,
             medico,
             servicio,
@@ -49,23 +51,32 @@ const ActualizarSolicitudScreen = ({ route, navigation }) => {
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Actualizar Solicitud</Text>
             </View>
-
             {/* Paciente */}
-            <TextInput
-                style={styles.input}
-                placeholder="Paciente"
-                value={paciente}
-                onChangeText={setPaciente}
-            />
-
+            <Text style={styles.label}>Paciente</Text>
+            <Picker
+                selectedValue={paciente}
+                onValueChange={(itemValue) => setPaciente(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione un paciente" value="" />
+                <Picker.Item label="Carlos Martin Hernandez de Jesus" value="Carlos Martin Hernandez de Jesus" />
+                <Picker.Item label="Sergio Ramirez Ortega" value="Sergio Ramirez Ortega" />
+                <Picker.Item label="Rafael Torres Guitierrez" value="Rafael Torres Guitierrez" />
+                <Picker.Item label="Panfila Sanchez Ortega" value="Panfila Sanchez Ortega" />
+            </Picker>
             {/* Médico */}
-            <TextInput
-                style={styles.input}
-                placeholder="Médico"
-                value={medico}
-                onChangeText={setMedico}
-            />
-
+            <Text style={styles.label}>Medico</Text>
+            <Picker
+                selectedValue={medico}
+                onValueChange={(itemValue) => setMedico(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione un paciente" value="" />
+                <Picker.Item label="Dr. Hernández" value="Dr. Hernández" />
+                <Picker.Item label="Dr. Gomez" value="Dr. Gomez" />
+                <Picker.Item label="Dr. Perez" value="Dr. perez" />
+                <Picker.Item label="Dr. Ramirez" value="Dr. Ramirez" />
+            </Picker>
             {/* Servicio */}
             <Text style={styles.label}>Servicio</Text>
             <Picker
@@ -130,7 +141,14 @@ const ActualizarSolicitudScreen = ({ route, navigation }) => {
 
             {/* Botón de guardar cambios */}
             <TouchableOpacity style={styles.addButton} onPress={handleActualizarSolicitud}>
-                <Text style={styles.addButtonText}>Actualizar</Text>
+                <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Actualizar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -179,13 +197,18 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,
         alignItems: 'center',
-        marginTop: 20,
     },
     addButtonText: {
         color: '#FFF',

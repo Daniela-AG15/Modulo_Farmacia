@@ -7,7 +7,6 @@ const MedicamentosScreen = ({ navigation, route }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredMedicamentos, setFilteredMedicamentos] = useState([]);
 
-    // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
             const data = [
@@ -24,7 +23,6 @@ const MedicamentosScreen = ({ navigation, route }) => {
         fetchData();
     }, []);
 
-    // Filtrar medicamentos basado en la búsqueda
     useEffect(() => {
         const filtered = medicamentos.filter((item) =>
             item.nombre_Generico.toLowerCase().includes(searchQuery.toLowerCase())
@@ -32,7 +30,6 @@ const MedicamentosScreen = ({ navigation, route }) => {
         setFilteredMedicamentos(filtered);
     }, [searchQuery, medicamentos]);
 
-    // Manejar la llegada de un nuevo medicamento desde AgregarMedicamentoScreen
     useEffect(() => {
         if (route.params?.newMedicamento) {
             setMedicamentos((prevMedicamentos) => [...prevMedicamentos, route.params.newMedicamento]);
@@ -40,12 +37,10 @@ const MedicamentosScreen = ({ navigation, route }) => {
     }, [route.params?.newMedicamento]);
 
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el medicamento seleccionado
         navigation.navigate('ActualizarMedicamento', { medicamentoData: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del medicamento, por ejemplo llamando a tu API
         Alert.alert('Eliminar Medicamento', `¿Seguro que deseas eliminar el medicamento con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {

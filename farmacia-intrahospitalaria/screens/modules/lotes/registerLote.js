@@ -12,10 +12,9 @@ const AgregarLoteScreen = ({ navigation, route }) => {
     const [cantidad, setCantidad] = useState('');
     const [ubicacion, setUbicacion] = useState('');
 
-    // Simulación de agregar un lote
     const handleAgregarLote = () => {
         const newLote = {
-            id: Date.now(), // Generar un ID único para el nuevo lote
+            id: Date.now(),
             medicamento,
             personalM,
             clave,
@@ -25,7 +24,6 @@ const AgregarLoteScreen = ({ navigation, route }) => {
             ubicacion,
         };
 
-        // Enviar el nuevo lote a la pantalla anterior
         navigation.navigate('Lotes', { newLote });
 
         Alert.alert('Lote Agregado', `Se ha agregado el lote de: ${medicamento}`);

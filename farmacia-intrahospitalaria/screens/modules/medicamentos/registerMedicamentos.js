@@ -13,10 +13,9 @@ const AgregarMedicamentoScreen = ({ navigation, route }) => {
     const [cantidad, setCantidad] = useState('');
     const [estatus, setEstatus] = useState('');
 
-    // Simulación de agregar un consumible
     const handleAgregarLote = () => {
         const newMedicamento = {
-            id: Date.now(), // Generar un ID único para el nuevo medicamento
+            id: Date.now(), 
             nombre_Generico: nombreG,
             nombre_Comercial: nombreC,
             viaAdministracion,
@@ -27,7 +26,6 @@ const AgregarMedicamentoScreen = ({ navigation, route }) => {
             estatus
         };
 
-        // Enviar el nuevo medicamento a la pantalla anterior
         navigation.navigate('Medicamentos', { newMedicamento });
 
         Alert.alert('Medicamento Agregado', `Se ha agregado el medicamento: ${nombreC}, ${nombreG}`);

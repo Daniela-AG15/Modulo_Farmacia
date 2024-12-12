@@ -7,7 +7,6 @@ const LotesScreen = ({ navigation, route }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredLotes, setFilteredLotes] = useState([]);
 
-    // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
             const data = [
@@ -21,7 +20,6 @@ const LotesScreen = ({ navigation, route }) => {
         fetchData();
     }, []);
 
-    // Filtrar lotes basado en la búsqueda
     useEffect(() => {
         if (searchQuery) {
             const filtered = lotes.filter((item) =>
@@ -33,7 +31,6 @@ const LotesScreen = ({ navigation, route }) => {
         }
     }, [searchQuery, lotes]);
 
-    // Manejar la llegada de un nuevo lote desde AgregarLoteScreen
     useEffect(() => {
         if (route.params?.newLote) {
             setLotes((prevLotes) => [...prevLotes, route.params.newLote]);
@@ -41,12 +38,10 @@ const LotesScreen = ({ navigation, route }) => {
     }, [route.params?.newLote]);
 
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando el lote seleccionado
         navigation.navigate('ActualizarLote', { loteData: item });
     };
 
     const handleDelete = (id) => {
-        // Aquí podrías manejar la eliminación del lote, por ejemplo llamando a tu API
         Alert.alert('Eliminar Lote', `¿Seguro que deseas eliminar el lote con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {

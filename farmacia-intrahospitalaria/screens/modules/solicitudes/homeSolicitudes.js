@@ -7,7 +7,6 @@ const HomeSolicitudes = ({ navigation }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredSolicitudes, setFilteredSolicitudes] = useState([]);
 
-    // Simulated data (replace this with API call)
     useEffect(() => {
         const fetchData = async () => {
             const data = [
@@ -21,7 +20,6 @@ const HomeSolicitudes = ({ navigation }) => {
         fetchData();
     }, []);
 
-    // Filtrar solicitudes basadas en la consulta de búsqueda
     useEffect(() => {
         const filtered = solicitudes.filter((item) =>
             item.paciente.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,7 +28,6 @@ const HomeSolicitudes = ({ navigation }) => {
     }, [searchQuery, solicitudes]);
 
     const handleEdit = (item) => {
-        // Navegar a la pantalla de actualización, pasando la solicitud seleccionada
         navigation.navigate('ActualizarSolicitud', { solicitudData: item });
     };
 
