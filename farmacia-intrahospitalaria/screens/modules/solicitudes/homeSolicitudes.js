@@ -2,86 +2,60 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConsumiblesScreen = ({ navigation, route }) => {
-    const [consumibles, setConsumibles] = useState([]);
+const HomeSolicitudes = ({ navigation }) => {
+    const [solicitudes, setSolicitudes] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredConsumibles, setFilteredConsumibles] = useState([]);
+    const [filteredSolicitudes, setFilteredSolicitudes] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const data = [
-                    { id: 1, nombre: 'Gasas', descripcion: 'Gasas estériles', cantidad: 100, tipo: 'Médico', departamento: 'Farmacia', estatus: 'Activo' },
-                    { id: 2, nombre: 'Jeringas', descripcion: 'Jeringas de 5ml', cantidad: 50, tipo: 'Instrumental', departamento: 'Urgencias', estatus: 'Activo' },
-                    { id: 3, nombre: 'Guantes', descripcion: 'Guantes desechables', cantidad: 200, tipo: 'Protección', departamento: 'Laboratorio', estatus: 'Inactivo' },
-                ];
-                setConsumibles(data);
-                setFilteredConsumibles(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                Alert.alert('Error', 'No se pudo obtener la lista de consumibles.');
-            }
+            const data = [
+                { id: 1, paciente: 'Juan Pérez', servicio: 'Consulta General', prioridad: 'Alta', estatus: 'Pendiente' },
+                { id: 2, paciente: 'María López', servicio: 'Rayos X', prioridad: 'Media', estatus: 'Aprobada' },
+                { id: 3, paciente: 'Carlos García', servicio: 'Laboratorio', prioridad: 'Baja', estatus: 'Rechazada' },
+            ];
+            setSolicitudes(data);
+            setFilteredSolicitudes(data);
         };
-    
         fetchData();
     }, []);
-    
 
     useEffect(() => {
-        const filtered = consumibles.filter((item) =>
-            item.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+        const filtered = solicitudes.filter((item) =>
+            item.paciente.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setFilteredConsumibles(filtered);
-    }, [searchQuery, consumibles]);
-
-    useEffect(() => {
-        if (route.params?.newConsumible) {
-            const newConsumible = route.params.newConsumible;
-            if (newConsumible && newConsumible.nombre && newConsumible.descripcion) {
-                const existingConsumible = consumibles.find(item => item.id === newConsumible.id);
-                if (!existingConsumible) {
-                    setConsumibles((prevConsumibles) => [
-                        ...prevConsumibles,
-                        newConsumible,
-                    ]);
-                    setFilteredConsumibles((prevFiltered) => [
-                        ...prevFiltered,
-                        newConsumible,
-                    ]);
-                } else {
-                    console.warn('El consumible ya está registrado.');
-                }
-            } else {
-                console.warn('New consumible data is incomplete or invalid.');
-            }
-        }
-    }, [route.params?.newConsumible]);
+        setFilteredSolicitudes(filtered);
+    }, [searchQuery, solicitudes]);
 
     const handleEdit = (item) => {
-        navigation.navigate('ActualizarConsumible', { consumible: item });
+        navigation.navigate('ActualizarSolicitud', { solicitudData: item });
     };
 
     const handleDelete = (id) => {
-        Alert.alert('Eliminar Consumible', `¿Seguro que deseas eliminar el consumible con id: ${id}?`, [
+        Alert.alert('Eliminar Solicitud', `¿Seguro que deseas eliminar la solicitud con ID: ${id}?`, [
             { text: 'Cancelar' },
-            { text: 'Eliminar', onPress: () => {
-                const updatedConsumibles = consumibles.filter(item => item.id !== id);
-                setConsumibles(updatedConsumibles);
-                setFilteredConsumibles(updatedConsumibles);
-            }} 
+            { 
+                text: 'Eliminar', 
+                onPress: () => {
+                    const updatedSolicitudes = solicitudes.filter(item => item.id !== id);
+                    setSolicitudes(updatedSolicitudes);
+                    setFilteredSolicitudes(updatedSolicitudes);
+                }
+            }
         ]);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Consumibles</Text>
+                <Text style={styles.headerTitle}>Solicitudes</Text>
             </View>
+
             {/* Barra de búsqueda */}
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Buscar consumibles..."
+                    placeholder="Buscar solicitudes..."
                     placeholderTextColor="#A9A9A9"
                     value={searchQuery}
                     onChangeText={setSearchQuery}
@@ -89,18 +63,16 @@ const ConsumiblesScreen = ({ navigation, route }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de solicitudes */}
             <FlatList
-                data={filteredConsumibles}
+                data={filteredSolicitudes}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Text style={styles.cardTitle}>{item.nombre}</Text>
-                        <Text style={styles.cardDescription}>{item.descripcion}</Text>
-                        <Text style={styles.cardDescription}>Cantidad: {item.cantidad}</Text>
-                        <Text style={styles.cardDescription}>Tipo: {item.tipo}</Text>
-                        <Text style={styles.cardDescription}>Departamento: {item.departamento}</Text>
-                        <Text style={styles.cardDescription}>Estatus: {item.estatus}</Text>
+                        <Text style={styles.cardTitle}>Paciente: {item.paciente}</Text>
+                        <Text style={styles.cardDetails}>Servicio: {item.servicio}</Text>
+                        <Text style={styles.cardDetails}>Prioridad: {item.prioridad}</Text>
+                        <Text style={styles.cardDetails}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -114,13 +86,13 @@ const ConsumiblesScreen = ({ navigation, route }) => {
                     </View>
                 )}
                 contentContainerStyle={styles.listContent}
-                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron consumibles.</Text>}
+                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron solicitudes.</Text>}
             />
 
             {/* Botón de agregar */}
             <TouchableOpacity
                 style={styles.addButton}
-                onPress={() => navigation.navigate('AgregarConsumible')}
+                onPress={() => navigation.navigate('AgregarSolicitud')}
             >
                 <Text style={styles.addButtonText}>+ Agregar</Text>
             </TouchableOpacity>
@@ -223,4 +195,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ConsumiblesScreen;
+export default HomeSolicitudes;

@@ -1,0 +1,14 @@
+Procedimiento de inserciones de tablas desde la API:
+.- Persona
+.- Usuario
+.- Usuario Login
+.- Personal Medico
+.- Solicitudes
+.- Consumibles
+.- Lotes
+.- Dispensaciones
+
+// Tablas Base
+.- Areas Medicas
+.- Servicios Medicos
+.- Departamentos

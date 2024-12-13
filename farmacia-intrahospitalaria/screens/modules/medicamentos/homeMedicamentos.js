@@ -2,80 +2,59 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConsumiblesScreen = ({ navigation, route }) => {
-    const [consumibles, setConsumibles] = useState([]);
+const MedicamentosScreen = ({ navigation, route }) => {
+    const [medicamentos, setMedicamentos] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredConsumibles, setFilteredConsumibles] = useState([]);
+    const [filteredMedicamentos, setFilteredMedicamentos] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const data = [
-                    { id: 1, nombre: 'Gasas', descripcion: 'Gasas estériles', cantidad: 100, tipo: 'Médico', departamento: 'Farmacia', estatus: 'Activo' },
-                    { id: 2, nombre: 'Jeringas', descripcion: 'Jeringas de 5ml', cantidad: 50, tipo: 'Instrumental', departamento: 'Urgencias', estatus: 'Activo' },
-                    { id: 3, nombre: 'Guantes', descripcion: 'Guantes desechables', cantidad: 200, tipo: 'Protección', departamento: 'Laboratorio', estatus: 'Inactivo' },
-                ];
-                setConsumibles(data);
-                setFilteredConsumibles(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                Alert.alert('Error', 'No se pudo obtener la lista de consumibles.');
-            }
+            const data = [
+                { id: 1, nombre_Generico: 'Paracetamol', nombre_Comercial: 'Paracet', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '50', tipo: 'Fármaco', volumen: '500', estatus: 'Activo' },
+                { id: 2, nombre_Generico: 'Ibuprofeno', nombre_Comercial: 'Ibux', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '30', tipo: 'Antiinflamatorio', volumen: '200', estatus: 'Inactivo' },
+                { id: 3, nombre_Generico: 'Amoxicilina', nombre_Comercial: 'Amoxil', via_Administracion: 'Oral', presentacion: 'Cápsulas', cantidad: '20', tipo: 'Antibiótico', volumen: '100', estatus: 'Activo' },
+                { id: 4, nombre_Generico: 'Metformina', nombre_Comercial: 'Glucophage', via_Administracion: 'Oral', presentacion: 'Comprimidos', cantidad: '60', tipo: 'Hipoglucemiante', volumen: '250', estatus: 'Inactivo' },
+                { id: 5, nombre_Generico: 'Loratadina', nombre_Comercial: 'Clarityne', via_Administracion: 'Oral', presentacion: 'Jarabe', cantidad: '100', tipo: 'Antihistamínico', volumen: '150', estatus: 'Activo' }
+            ];
+            setMedicamentos(data);
+            setFilteredMedicamentos(data);
         };
-    
+
         fetchData();
     }, []);
-    
 
     useEffect(() => {
-        const filtered = consumibles.filter((item) =>
-            item.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+        const filtered = medicamentos.filter((item) =>
+            item.nombre_Generico.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setFilteredConsumibles(filtered);
-    }, [searchQuery, consumibles]);
+        setFilteredMedicamentos(filtered);
+    }, [searchQuery, medicamentos]);
 
     useEffect(() => {
-        if (route.params?.newConsumible) {
-            const newConsumible = route.params.newConsumible;
-            if (newConsumible && newConsumible.nombre && newConsumible.descripcion) {
-                const existingConsumible = consumibles.find(item => item.id === newConsumible.id);
-                if (!existingConsumible) {
-                    setConsumibles((prevConsumibles) => [
-                        ...prevConsumibles,
-                        newConsumible,
-                    ]);
-                    setFilteredConsumibles((prevFiltered) => [
-                        ...prevFiltered,
-                        newConsumible,
-                    ]);
-                } else {
-                    console.warn('El consumible ya está registrado.');
-                }
-            } else {
-                console.warn('New consumible data is incomplete or invalid.');
-            }
+        if (route.params?.newMedicamento) {
+            setMedicamentos((prevMedicamentos) => [...prevMedicamentos, route.params.newMedicamento]);
         }
-    }, [route.params?.newConsumible]);
+    }, [route.params?.newMedicamento]);
 
     const handleEdit = (item) => {
-        navigation.navigate('ActualizarConsumible', { consumible: item });
+        navigation.navigate('ActualizarMedicamento', { medicamentoData: item });
     };
 
     const handleDelete = (id) => {
-        Alert.alert('Eliminar Consumible', `¿Seguro que deseas eliminar el consumible con id: ${id}?`, [
+        Alert.alert('Eliminar Medicamento', `¿Seguro que deseas eliminar el medicamento con id: ${id}?`, [
             { text: 'Cancelar' },
             { text: 'Eliminar', onPress: () => {
-                const updatedConsumibles = consumibles.filter(item => item.id !== id);
-                setConsumibles(updatedConsumibles);
-                setFilteredConsumibles(updatedConsumibles);
-            }} 
+                const updatedMedicamento = medicamentos.filter(item => item.id !== id);
+                setMedicamentos(updatedMedicamento);
+                setFilteredMedicamentos(updatedMedicamento);
+            }}
         ]);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Consumibles</Text>
+                <Text style={styles.headerTitle}>Medicamentos</Text>
             </View>
             {/* Barra de búsqueda */}
             <View style={styles.searchContainer}>
@@ -89,18 +68,19 @@ const ConsumiblesScreen = ({ navigation, route }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de medicamentos */}
             <FlatList
-                data={filteredConsumibles}
+                data={filteredMedicamentos}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Text style={styles.cardTitle}>{item.nombre}</Text>
-                        <Text style={styles.cardDescription}>{item.descripcion}</Text>
-                        <Text style={styles.cardDescription}>Cantidad: {item.cantidad}</Text>
-                        <Text style={styles.cardDescription}>Tipo: {item.tipo}</Text>
-                        <Text style={styles.cardDescription}>Departamento: {item.departamento}</Text>
-                        <Text style={styles.cardDescription}>Estatus: {item.estatus}</Text>
+                        <Text style={styles.cardTitle}>Nombre Generico: {item.nombre_Generico}</Text>
+                        <Text style={styles.cardType}>Nombre Comercial: {item.nombre_Comercial}</Text>
+                        <Text style={styles.cardType}>Administracion: {item.via_Administracion}</Text>
+                        <Text style={styles.cardType}>Presentacion: {item.presentacion}</Text>
+                        <Text style={styles.cardType}>Tipo: {item.tipo}</Text>
+                        <Text style={styles.cardType}>Volumen: {item.volumen}</Text>
+                        <Text style={styles.cardType}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -120,7 +100,7 @@ const ConsumiblesScreen = ({ navigation, route }) => {
             {/* Botón de agregar */}
             <TouchableOpacity
                 style={styles.addButton}
-                onPress={() => navigation.navigate('AgregarConsumible')}
+                onPress={() => navigation.navigate('AgregarMedicamento')}
             >
                 <Text style={styles.addButtonText}>+ Agregar</Text>
             </TouchableOpacity>
@@ -178,11 +158,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#003DA5',
     },
-    cardDescription: {
-        fontSize: 14,
-        color: '#555',
-        marginTop: 4,
-    },
     cardType: {
         fontSize: 12,
         color: '#777',
@@ -223,4 +198,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ConsumiblesScreen;
+export default MedicamentosScreen;

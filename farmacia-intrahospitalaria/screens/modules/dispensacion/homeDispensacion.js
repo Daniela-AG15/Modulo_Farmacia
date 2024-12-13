@@ -2,86 +2,60 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ConsumiblesScreen = ({ navigation, route }) => {
-    const [consumibles, setConsumibles] = useState([]);
+const HomeDispensacion = ({ navigation }) => {
+    const [dispensaciones, setDispensaciones] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredConsumibles, setFilteredConsumibles] = useState([]);
+    const [filteredDispensaciones, setFilteredDispensaciones] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const data = [
-                    { id: 1, nombre: 'Gasas', descripcion: 'Gasas estériles', cantidad: 100, tipo: 'Médico', departamento: 'Farmacia', estatus: 'Activo' },
-                    { id: 2, nombre: 'Jeringas', descripcion: 'Jeringas de 5ml', cantidad: 50, tipo: 'Instrumental', departamento: 'Urgencias', estatus: 'Activo' },
-                    { id: 3, nombre: 'Guantes', descripcion: 'Guantes desechables', cantidad: 200, tipo: 'Protección', departamento: 'Laboratorio', estatus: 'Inactivo' },
-                ];
-                setConsumibles(data);
-                setFilteredConsumibles(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                Alert.alert('Error', 'No se pudo obtener la lista de consumibles.');
-            }
+            const data = [
+                { id: 1, medicamento: 'Paracetamol', cantidad: '20', estatus: 'Pendiente' },
+                { id: 2, medicamento: 'Ibuprofeno', cantidad: '10', estatus: 'Entregado' },
+                { id: 3, medicamento: 'Amoxicilina', cantidad: '30', estatus: 'Rechazado' },
+            ];
+            setDispensaciones(data);
+            setFilteredDispensaciones(data);
         };
-    
         fetchData();
     }, []);
-    
 
     useEffect(() => {
-        const filtered = consumibles.filter((item) =>
-            item.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+        const filtered = dispensaciones.filter((item) =>
+            item.medicamento.toLowerCase().includes(searchQuery.toLowerCase())
         );
-        setFilteredConsumibles(filtered);
-    }, [searchQuery, consumibles]);
-
-    useEffect(() => {
-        if (route.params?.newConsumible) {
-            const newConsumible = route.params.newConsumible;
-            if (newConsumible && newConsumible.nombre && newConsumible.descripcion) {
-                const existingConsumible = consumibles.find(item => item.id === newConsumible.id);
-                if (!existingConsumible) {
-                    setConsumibles((prevConsumibles) => [
-                        ...prevConsumibles,
-                        newConsumible,
-                    ]);
-                    setFilteredConsumibles((prevFiltered) => [
-                        ...prevFiltered,
-                        newConsumible,
-                    ]);
-                } else {
-                    console.warn('El consumible ya está registrado.');
-                }
-            } else {
-                console.warn('New consumible data is incomplete or invalid.');
-            }
-        }
-    }, [route.params?.newConsumible]);
+        setFilteredDispensaciones(filtered);
+    }, [searchQuery, dispensaciones]);
 
     const handleEdit = (item) => {
-        navigation.navigate('ActualizarConsumible', { consumible: item });
+        navigation.navigate('ActualizarDispensacion', { dispensacionData: item });
     };
 
     const handleDelete = (id) => {
-        Alert.alert('Eliminar Consumible', `¿Seguro que deseas eliminar el consumible con id: ${id}?`, [
+        Alert.alert('Eliminar Dispensación', `¿Seguro que deseas eliminar la dispensación con ID: ${id}?`, [
             { text: 'Cancelar' },
-            { text: 'Eliminar', onPress: () => {
-                const updatedConsumibles = consumibles.filter(item => item.id !== id);
-                setConsumibles(updatedConsumibles);
-                setFilteredConsumibles(updatedConsumibles);
-            }} 
+            { 
+                text: 'Eliminar', 
+                onPress: () => {
+                    const updatedDispensaciones = dispensaciones.filter(item => item.id !== id);
+                    setDispensaciones(updatedDispensaciones);
+                    setFilteredDispensaciones(updatedDispensaciones);
+                }
+            }
         ]);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Consumibles</Text>
+                <Text style={styles.headerTitle}>Dispensaciones</Text>
             </View>
+
             {/* Barra de búsqueda */}
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Buscar consumibles..."
+                    placeholder="Buscar dispensaciones..."
                     placeholderTextColor="#A9A9A9"
                     value={searchQuery}
                     onChangeText={setSearchQuery}
@@ -89,18 +63,15 @@ const ConsumiblesScreen = ({ navigation, route }) => {
                 <Icon name="search-outline" size={24} color="#A9A9A9" />
             </View>
 
-            {/* Lista de consumibles */}
+            {/* Lista de dispensaciones */}
             <FlatList
-                data={filteredConsumibles}
+                data={filteredDispensaciones}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Text style={styles.cardTitle}>{item.nombre}</Text>
-                        <Text style={styles.cardDescription}>{item.descripcion}</Text>
-                        <Text style={styles.cardDescription}>Cantidad: {item.cantidad}</Text>
-                        <Text style={styles.cardDescription}>Tipo: {item.tipo}</Text>
-                        <Text style={styles.cardDescription}>Departamento: {item.departamento}</Text>
-                        <Text style={styles.cardDescription}>Estatus: {item.estatus}</Text>
+                        <Text style={styles.cardTitle}>Medicamento: {item.medicamento}</Text>
+                        <Text style={styles.cardDetails}>Cantidad: {item.cantidad}</Text>
+                        <Text style={styles.cardDetails}>Estatus: {item.estatus}</Text>
 
                         {/* Iconos de acción: Editar y Eliminar */}
                         <View style={styles.actionsContainer}>
@@ -114,13 +85,13 @@ const ConsumiblesScreen = ({ navigation, route }) => {
                     </View>
                 )}
                 contentContainerStyle={styles.listContent}
-                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron consumibles.</Text>}
+                ListEmptyComponent={<Text style={styles.emptyText}>No se encontraron dispensaciones.</Text>}
             />
 
             {/* Botón de agregar */}
             <TouchableOpacity
                 style={styles.addButton}
-                onPress={() => navigation.navigate('AgregarConsumible')}
+                onPress={() => navigation.navigate('AgregarDispensacion')}
             >
                 <Text style={styles.addButtonText}>+ Agregar</Text>
             </TouchableOpacity>
@@ -223,4 +194,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ConsumiblesScreen;
+export default HomeDispensacion;

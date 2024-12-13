@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const ActualizarConsumibleScreen = ({ route, navigation }) => {
+const ActualizarConsumibleScreen = ({ navigation, route }) => {
     const { consumible } = route.params;
-
-    const [nombre, setNombre] = useState(consumible?.nombre || '');
-    const [descripcion, setDescripcion] = useState(consumible?.descripcion || '');
-    const [cantidad, setCantidad] = useState(consumible?.cantidad?.toString() || '');
-    const [tipo, setTipo] = useState(consumible?.tipo || '');
-    const [departamento, setDepartamento] = useState(consumible?.departamento || '');
-    const [estatus, setEstatus] = useState(consumible?.estatus || '');
+    const [nombre, setNombre] = useState(consumible.nombre);
+    const [descripcion, setDescripcion] = useState(consumible.descripcion);
+    const [cantidad, setCantidad] = useState(consumible.cantidad);
+    const [tipo, setTipo] = useState(consumible.tipo);
+    const [departamento, setDepartamento] = useState(consumible.departamento);
+    const [estatus, setEstatus] = useState(consumible.estatus);
 
     const handleActualizarConsumible = () => {
         const updatedConsumible = {
@@ -24,17 +24,16 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
         };
 
         Alert.alert('Consumible Actualizado', `Se ha actualizado el consumible: ${nombre}`);
+
         navigation.goBack();
     };
 
     return (
         <View style={styles.container}>
-            {/* Título */}
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Actualizar Consumible</Text>
             </View>
 
-            {/* Formulario */}
             <TextInput
                 style={styles.input}
                 placeholder="Nombre"
@@ -55,7 +54,6 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
                 onChangeText={setCantidad}
             />
 
-            {/* Selector de Tipo */}
             <Text style={styles.label}>Tipo</Text>
             <Picker
                 selectedValue={tipo}
@@ -68,7 +66,6 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
                 <Picker.Item label="Instrumento" value="Instrumento" />
             </Picker>
 
-            {/* Selector de Departamento */}
             <Text style={styles.label}>Departamento</Text>
             <Picker
                 selectedValue={departamento}
@@ -81,7 +78,6 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
                 <Picker.Item label="Laboratorio" value="Laboratorio" />
             </Picker>
 
-            {/* Selector de Estatus */}
             <Text style={styles.label}>Estatus</Text>
             <Picker
                 selectedValue={estatus}
@@ -93,13 +89,20 @@ const ActualizarConsumibleScreen = ({ route, navigation }) => {
                 <Picker.Item label="Inactivo" value="Inactivo" />
             </Picker>
 
-            {/* Botón de actualizar */}
-            <TouchableOpacity style={styles.addButton} onPress={handleActualizarConsumible}>
-                <Text style={styles.addButtonText}>Actualizar</Text>
+            <TouchableOpacity style={styles.updateButton} onPress={handleActualizarConsumible}>
+                <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.updateButtonText}>Actualizar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
 };
+
 
 const styles = StyleSheet.create({
     container: {
@@ -140,15 +143,21 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
-    addButton: {
-        backgroundColor: '#003DA5',
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
+    updateButton: {
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,
         alignItems: 'center',
         marginTop: 20,
     },
-    addButtonText: {
+    updateButtonText: {
         color: '#FFF',
         fontSize: 18,
         fontWeight: 'bold',

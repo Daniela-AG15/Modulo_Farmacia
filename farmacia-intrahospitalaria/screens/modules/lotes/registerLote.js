@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const AgregarLoteScreen = ({ navigation }) => {
+const AgregarLoteScreen = ({ navigation, route }) => {
     const [medicamento, setMedicamento] = useState('');
     const [personalM, setPersonalM] = useState('');
     const [clave, setClave] = useState('');
     const [estatus, setEstatus] = useState('');
     const [costo, setCosto] = useState('');
     const [cantidad, setCantidad] = useState('');
-    const [ubicacion, setUbiacion] = useState('');
+    const [ubicacion, setUbicacion] = useState('');
 
-    // Simulación de agregar un consumible
     const handleAgregarLote = () => {
-        const newConsumible = {
+        const newLote = {
+            id: Date.now(),
             medicamento,
             personalM,
             clave,
             estatus,
+            costo,
+            cantidad,
+            ubicacion,
         };
 
-        Alert.alert('Lote Agregado', `Se ha agregado el lote: ${medicamento}`);
+        navigation.navigate('Lotes', { newLote });
 
-        navigation.goBack();
+        Alert.alert('Lote Agregado', `Se ha agregado el lote de: ${medicamento}`);
     };
 
     return (
@@ -40,9 +44,9 @@ const AgregarLoteScreen = ({ navigation }) => {
                 style={styles.picker}
             >
                 <Picker.Item label="Seleccione un medicamento" value="" />
-                <Picker.Item label="Material" value="Material" />
-                <Picker.Item label="Equipo" value="Equipo" />
-                <Picker.Item label="Instrumento" value="Instrumento" />
+                <Picker.Item label="Paracetamol" value="Paracetamol" />
+                <Picker.Item label="Neproxina" value="Neproxina" />
+                <Picker.Item label="Loratadina" value="Loratadina" />
             </Picker>
 
             {/* Selector de Personal Medico */}
@@ -52,12 +56,13 @@ const AgregarLoteScreen = ({ navigation }) => {
                 onValueChange={(itemValue) => setPersonalM(itemValue)}
                 style={styles.picker}
             >
-                <Picker.Item label="Seleccione un medico" value="" />
-                <Picker.Item label="Material" value="Material" />
-                <Picker.Item label="Equipo" value="Equipo" />
-                <Picker.Item label="Instrumento" value="Instrumento" />
+                <Picker.Item label="Seleccione un médico" value="" />
+                <Picker.Item label="Dr. Smith" value="Dr. Smith" />
+                <Picker.Item label="Dr. Johnson" value="Dr. Johnson" />
+                <Picker.Item label="Dr. Brown" value="Dr. Brown" />
             </Picker>
 
+            {/* Clave */}
             <TextInput
                 style={styles.input}
                 placeholder="Clave"
@@ -73,11 +78,12 @@ const AgregarLoteScreen = ({ navigation }) => {
                 onValueChange={(itemValue) => setEstatus(itemValue)}
                 style={styles.picker}
             >
-                <Picker.Item label="Seleccione un tipo" value="" />
+                <Picker.Item label="Seleccione un estatus" value="" />
                 <Picker.Item label="Activo" value="Activo" />
                 <Picker.Item label="Inactivo" value="Inactivo" />
             </Picker>
 
+            {/* Costo */}
             <TextInput
                 style={styles.input}
                 placeholder="Costo"
@@ -86,6 +92,7 @@ const AgregarLoteScreen = ({ navigation }) => {
                 onChangeText={setCosto}
             />
 
+            {/* Cantidad */}
             <TextInput
                 style={styles.input}
                 placeholder="Cantidad"
@@ -94,17 +101,29 @@ const AgregarLoteScreen = ({ navigation }) => {
                 onChangeText={setCantidad}
             />
 
-            <TextInput
-                style={styles.input}
-                placeholder="Ubicacion"
-                keyboardType="text"
-                value={ubicacion}
-                onChangeText={setUbiacion}
-            />
+            {/* Selector de Ubicación */}
+            <Text style={styles.label}>Ubicación</Text>
+            <Picker
+                selectedValue={ubicacion}
+                onValueChange={(itemValue) => setUbicacion(itemValue)}
+                style={styles.picker}
+            >
+                <Picker.Item label="Seleccione una ubicación" value="" />
+                <Picker.Item label="Área 1" value="Área 1" />
+                <Picker.Item label="Área 2" value="Área 2" />
+                <Picker.Item label="Área 3" value="Área 3" />
+            </Picker>
 
             {/* Botón de agregar */}
             <TouchableOpacity style={styles.addButton} onPress={handleAgregarLote}>
-                <Text style={styles.addButtonText}>Agregar</Text>
+            <LinearGradient
+                    colors={['#1C3150', '#4D6489']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                    style={styles.buttonGradient}
+                >
+                    <Text style={styles.addButtonText}>Agregar</Text>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );
@@ -149,8 +168,14 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: '#333',
     },
+    buttonGradient: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
     addButton: {
-        backgroundColor: '#003DA5',
         paddingVertical: 12,
         paddingHorizontal: 30,
         borderRadius: 8,
