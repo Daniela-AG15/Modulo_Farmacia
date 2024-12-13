@@ -362,7 +362,51 @@ A continuación, se muestra los sketches diseñados en base al sitio web anterio
 ![alt text](<Diseño/Captura de pantalla 2024-12-12 222237.png>) 
 [alt text](README.md)
 
+---
 
+## 🚫 Limitaciones del Proyecto
+
+#### 1.	Recopilación de Requisitos Incompleta:
+-	Las encuestas pueden no captar todos los requisitos debido a respuestas ambiguas o incompletas.
+-	Falta de participación de todos los grupos interesados.
+#### 2.	Complejidad del Sistema:
+-	Integración con sistemas hospitalarios existentes podría ser compleja y requerir mucho tiempo.
+-	Falta de estandarización en los procesos del hospital.
+#### 3.	Diseño y Usabilidad del Frontend:
+-	Los diseños (Sketch y Mockups) podrían no satisfacer las necesidades específicas de los usuarios finales.
+-	Problemas de accesibilidad para usuarios con discapacidades.
+#### 4.	Capacitación Insuficiente del Personal:
+-	Resistencia al cambio por parte del personal hospitalario.
+-	Falta de tiempo para implementar sesiones de capacitación completas.
+#### 5.	Presión de Tiempo y Recursos:
+-	Plazos ajustados podrían afectar la calidad del diseño y desarrollo.
+-	Recursos humanos y financieros limitados.
+
+### Posibles Mejoras:
+
+#### 1.	Fase de Requisitos:
+-	Usar técnicas adicionales como entrevistas o talleres con grupos focales para complementar las encuestas.
+-	Priorizar requisitos mediante un enfoque basado en valor.
+#### 2.	Tecnologías y Herramientas:
+-	Seleccionar tecnologías modernas con soporte a largo plazo, como frameworks multiplataforma (Flutter, React Native).
+-	Implementar infraestructura en la nube para escalabilidad.
+#### 3.	Pruebas y Validación:
+-	Realizar pruebas de usabilidad con usuarios reales antes de finalizar los diseños.
+-	Ejecutar pruebas de integración y rendimiento durante la fase de desarrollo.
+#### 4.	Seguridad:
+-	Incluir cifrado de extremo a extremo para todos los datos almacenados y transferidos.
+-	Implementar autenticación multifactor para acceso al sistema.
+#### 5.	Capacitación del Personal:
+-	Crear tutoriales interactivos en la aplicación para guiar a los usuarios en tiempo real.
+-	Planificar sesiones regulares de retroalimentación post-implementación.
+#### 6.	Escalabilidad:
+-	Diseñar la arquitectura de software con modularidad, para agregar futuros módulos hospitalarios.
+-	Asegurar que la base de datos soporte grandes volúmenes de datos y consultas concurrentes.
+#### 7.	Monitoreo y Mantenimiento:
+-	Implementar un sistema de monitoreo en tiempo real para identificar problemas rápidamente.
+-	Planificar actualizaciones periódicas para incorporar mejoras basadas en retroalimentación.
+
+---
 ## ⚙️ **Requerimientos Funcionales**
 
 | **RF**  | **Requisito**                 | **Descripción** |
