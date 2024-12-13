@@ -290,16 +290,6 @@ Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando e
 
 ### 🎨 **Sketches de diseño**
 
-![alt text](Sketch/1.jpeg)
-![alt text](Sketch/2.jpeg)
-![alt text](Sketch/3.jpeg)
-![alt text](Sketch/Sketch-Calificacion.jpeg)
-![alt text](Sketch/Sketch-Dispensacion.jpeg)
-![alt text](Sketch/Sketch-Medicamentos.jpeg)
-![alt text](Sketch/Sketch-NuevoMedicamento.jpeg)
-![alt text](Sketch/Sketch1.jpg)
-![alt text](Sketch/Sketch2.jpg)
-![alt text](Sketch/Solicitudes.jpg)
 ---
 
 ### 🎨 **Wireframes**
