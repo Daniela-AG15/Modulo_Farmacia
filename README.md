@@ -9,6 +9,8 @@ Repositorio del módulo de **Farmacia Intrahospitalaria** para el **Hospital Pri
 ---
 ![logoCMD](https://github.com/CrisOjeda9/Farmacia-Intrahospitalaria/assets/161864911/7470cf19-54db-420b-bb88-bff501cbc681)
 
+
+
 ## 🌐 Organigrama CMD
 
 ![OrganigramaCMD](https://drive.google.com/uc?export=view&id=1FfywTxNxXyQ5ZdvVWzSQ3lRtLfz0klz4)
@@ -153,6 +155,22 @@ Este sistema busca mejorar la experiencia de los pacientes y optimizar la gesti�
 </div>
 
 ---
+
+## Equipo de Desarrollo
+
+Nuestro equipo está conformado por los siguientes miembros:
+
+- Daniela Aguilar Torres
+- @Daniela-AG15
+- Carlos Martin Hernandez de Jesus
+- @carlosM18-max
+- Cristian Ojeda Gayosso  
+- @CrisOjeda9  
+- Myriam Valderrabano Cortez
+- @MyriamValderrabano  
+
+
+
 
 > **"El mejor cuidado comienza con la tecnología más avanzada."**  
 > **Hospital Medical Care and Healing por CMD**
