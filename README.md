@@ -308,34 +308,13 @@ A continuación, se muestra los sketches diseñados en base al sitio web anterio
 
 ### 🎨 **Wireframes**
 
-<p align="center">
-  <img src="Diseño/AcercaDe.PNG" alt="Acerca De" width="46%">
-  <img src="Diseño/calificacion_app.png" alt="Calificación App" width="40%">
-</p>
-
-![alt text](Diseño/Diseño1.png)
-![alt text](Diseño/Diseño2.png)
-![alt text](Diseño/Diseño3.png)
-
-<p align="center">
-  <img src="Diseño/dispensacion.png"  width="40%">
-  <img src="Diseño/Inventario.PNG"  width="60%">
-</p>
-
-<p align="center">
-  <img src="Diseño/Loading.png"  width="44%">
-  <img src="Diseño/Login.png"  width="45%">
-</p>
-<p align="center">
-  <img src="Diseño/medicamentos.png"  width="45%">
-  <img src="Diseño/nuevo_medicamento.png"  width="42.5%">
-</p>
-<p align="center">
-  <img src="Diseño/NuevoLote.PNG"  width="44%">
-  <img src="Diseño/Solicitudes.png"  width="41%">
-</p>
-
-
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221201.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221210.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221218.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221224.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221230.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221238.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221243.png>)
 ---
  
 ## ⚙️ **Requerimientos Funcionales**
