@@ -84,6 +84,22 @@ Sprint Review: Al final de cada Sprint, el equipo realiza una revisión del trab
 Sprint Retrospective: Después de la Sprint Review, el equipo realiza una retrospectiva para discutir qué fue bien, qué se puede mejorar y cómo trabajar mejor en el próximo Sprint.
 
 
+## 🏥 **Conexión Metodologica**
+Scrum es útil porque permite a los equipos de trabajo adaptarse rápidamente a los cambios, mejorar continuamente sus procesos, colaborar de manera efectiva y entregar valor de forma constante. El uso de este marco metodológico ayuda a minimizar riesgos, aumentar la transparencia y optimizar la entrega de funcionalidades clave que aporten valor al negocio.
+
+Scrum es el marco más popular de las metodologías Agiles. Es una metodología adaptativa (promueve la adaptación continua), iterativa (varias repeticiones), rápida, flexible y eficaz, diseñada para ofrecer al cliente/usuarios un valor significativo de forma rápida y a lo largo del proyecto.
+Scrum asegura la transparencia en la comunicación y crea un ambiente de responsabilidad colectiva y el progreso continuo. El marco de Scrum, tal como se define en la Guía de SBOK, está estructurado de tal manera que apoya el desarrollo del producto y servicio en todo tipo de industrias y en cualquier tipo de proyecto, independientemente de su complejidad.
+
+
+En el contexto del sistema hospitalario, esto permite:
+
+•	Adaptación a cambios: Los cambios en los requerimientos, que son comunes en los entornos hospitalarios, pueden ser implementados rápidamente durante los sprints.
+
+•	Entrega continua de valor: Cada sprint produce un incremento funcional del sistema que puede ser probado y evaluado por los usuarios.
+
+•	Feedback constante: Los usuarios pueden retroalimentar el desarrollo del sistema de manera continua, asegurando que el producto final cumpla con las expectativas.
+
+
 
 ## 💻 **Propuesta de Frontend**
 
