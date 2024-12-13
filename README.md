@@ -263,6 +263,25 @@ Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando e
 •	Falta de tiempo
 
 
+## Analisis
+![alt text](Diseño/image.png)
+![alt text](Diseño/image2.png)
+![alt text](Diseño/image3.png)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214356.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214415.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214428.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214442.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214457.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214549.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214603.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214618.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214632.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214700.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214714.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214726.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214739.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214750.png>)
+
 
 
 
