@@ -100,6 +100,168 @@ En el contexto del sistema hospitalario, esto permite:
 •	Feedback constante: Los usuarios pueden retroalimentar el desarrollo del sistema de manera continua, asegurando que el producto final cumpla con las expectativas.
 
 
+## 🏥 **Instruementos de Elaboración**
+
+### Herramientas para Recabar Requerimientos:
+Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando encuestas para obtener información clave sobre las expectativas de los usuarios. Las encuestas contenían preguntas tanto cerradas como abiertas para capturar requerimientos funcionales y no funcionales.
+
+### Preguntas de las Encuestas
+
+### Preguntas si no cuenta con un sistema
+
+#### 1: ¿Considera que enfrenta desafíos en la gestión de la farmacia intrahospitalaria?
+
+•	a) Sí:
+
+2. ¿Cuáles son los principales desafíos que enfrenta?
+
+•	Falta de personal
+
+•	Proceso ineficiente
+
+•	Control de inventario deficiente
+
+3. ¿Qué soluciones ha considerado para superar estos desafíos?
+
+•	Capacitación del personal
+
+•	Implementación de tecnología
+
+•	Mejora de procesos
+
+•	b) No:
+
+2. ¿Qué aspectos de su gestión considera que funcionan bien?
+
+•	Atención al paciente
+
+•	Control de inventario
+
+•	Eficiencia en procesos
+
+3. ¿Qué medidas ha tomado para mantener esos aspectos positivos?
+
+•	Capacitación continua
+
+•	Revisión de procesos
+
+4: ¿Utiliza procesos manuales para la dispensación de medicamentos a los pacientes?
+
+•	a) Sí:
+
+5. ¿Qué tipo de procesos manuales utiliza?
+
+•	Listas de control
+
+•	Formularios en papel
+
+•	Registro en hojas de cálculo
+
+6. ¿Qué dificultades ha encontrado con estos procesos manuales?
+
+•	Errores de registro
+
+•	Tiempo consumido
+
+•	Falta de trazabilidad
+
+•	b) No:
+
+5. ¿Qué sistema utiliza para la dispensación?
+•	Software de gestión farmacéutica
+
+•	Sistema de gestión hospitalaria
+
+•	Aplicaciones móviles
+
+6. ¿Qué beneficios ha notado desde la implementación de este sistema?
+
+•	Mayor eficiencia
+
+•	Reducción de errores
+
+•	Mejor seguimiento de medicamentos
+
+7: ¿Controla el inventario de medicamentos de manera manual?
+
+•	a) Sí:
+
+8. ¿Cómo lleva el control de su inventario?
+
+•	Hojas de cálculo
+
+•	Listas impresas
+
+•	Registros en papel
+
+9. ¿Ha considerado cambiar a un sistema automatizado?
+
+•	Sí
+
+•	No
+
+•	Tal vez en el futuro
+
+•	b) No:
+
+8. ¿Qué sistema utiliza para el control del inventario?
+
+•	Sistema automatizado
+
+•	Software especializado
+
+•	Herramientas de gestión de recursos
+
+9. ¿Qué características le resultan más útiles de este sistema?
+
+•	Reportes en tiempo real
+
+•	Alertas de caducidad
+
+•	Integración con otros sistemas
+
+10: ¿Tiene protocolos establecidos para gestionar la caducidad de medicamentos?
+
+•	a) Sí:
+
+11. ¿Cómo asegura que estos protocolos se sigan?
+
+•	Capacitación del personal
+
+•	Revisiones periódicas
+
+•	Registro de cumplimiento
+
+12. ¿Con qué frecuencia revisa estos protocolos?
+
+•	Mensualmente
+
+•	Trimestralmente
+
+•	Anualmente
+
+•	b) No:
+
+11. ¿Le gustaría establecer protocolos para esto?
+
+•	Sí
+
+•	No
+
+•	Tal vez
+
+12. ¿Qué obstáculos enfrenta para establecer estos protocolos?
+
+•	Falta de recursos
+
+•	Resistencia del personal
+
+•	Falta de tiempo
+
+
+
+
+
 
 ## 💻 **Propuesta de Frontend**
 
