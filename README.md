@@ -156,24 +156,23 @@ Este sistema busca mejorar la experiencia de los pacientes y optimizar la gesti�
 
 ---
 
+> **"El mejor cuidado comienza con la tecnología más avanzada."**  
+> **Hospital Medical Care and Healing por CMD**
+
+---
+
 ## Equipo de Desarrollo
 
 Nuestro equipo está conformado por los siguientes miembros:
 
-- Daniela Aguilar Torres
-- @Daniela-AG15
-- Carlos Martin Hernandez de Jesus
-- @carlosM18-max
+- Daniela Aguilar Torres  
+  - @Daniela-AG15  
+- Carlos Martin Hernandez de Jesus  
+  - @carlosM18-max  
 - Cristian Ojeda Gayosso  
-- @CrisOjeda9  
-- Myriam Valderrabano Cortez
-- @MyriamValderrabano  
-
-
-
-
-> **"El mejor cuidado comienza con la tecnología más avanzada."**  
-> **Hospital Medical Care and Healing por CMD**
+  - @CrisOjeda9  
+- Myriam Valderrabano Cortez  
+  - @MyriamValderrabano  
 
 
 
