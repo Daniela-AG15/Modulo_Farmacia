@@ -263,6 +263,25 @@ Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando e
 •	Falta de tiempo
 
 
+## Analisis
+![alt text](Diseño/image.png)
+![alt text](Diseño/image2.png)
+![alt text](Diseño/image3.png)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214356.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214415.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214428.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214442.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214457.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214549.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214603.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214618.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214632.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214700.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214714.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214726.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214739.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 214750.png>)
+
 
 
 
@@ -270,51 +289,123 @@ Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando e
 ## 💻 **Propuesta de Frontend**
 
 ### 🎨 **Sketches de diseño**
+A continuación, se muestra los sketches diseñados en base al sitio web anterior.
 
-![alt text](Sketch/1.jpeg)
-![alt text](Sketch/2.jpeg)
-![alt text](Sketch/3.jpeg)
-![alt text](Sketch/Sketch-Calificacion.jpeg)
-![alt text](Sketch/Sketch-Dispensacion.jpeg)
-![alt text](Sketch/Sketch-Medicamentos.jpeg)
-![alt text](Sketch/Sketch-NuevoMedicamento.jpeg)
-![alt text](Sketch/Sketch1.jpg)
-![alt text](Sketch/Sketch2.jpg)
-![alt text](Sketch/Solicitudes.jpg)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215516.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215601.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215618.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215624.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215631.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215637.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 220348.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 220402.png>)
+![alt text](<Diseño/Captura de pantalla 2024-12-12 220421.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215723.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215729.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215734.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215739.png>) 
 ---
 
 ### 🎨 **Wireframes**
 
-<p align="center">
-  <img src="Diseño/AcercaDe.PNG" alt="Acerca De" width="46%">
-  <img src="Diseño/calificacion_app.png" alt="Calificación App" width="40%">
-</p>
-
-![alt text](Diseño/Diseño1.png)
-![alt text](Diseño/Diseño2.png)
-![alt text](Diseño/Diseño3.png)
-
-<p align="center">
-  <img src="Diseño/dispensacion.png"  width="40%">
-  <img src="Diseño/Inventario.PNG"  width="60%">
-</p>
-
-<p align="center">
-  <img src="Diseño/Loading.png"  width="44%">
-  <img src="Diseño/Login.png"  width="45%">
-</p>
-<p align="center">
-  <img src="Diseño/medicamentos.png"  width="45%">
-  <img src="Diseño/nuevo_medicamento.png"  width="42.5%">
-</p>
-<p align="center">
-  <img src="Diseño/NuevoLote.PNG"  width="44%">
-  <img src="Diseño/Solicitudes.png"  width="41%">
-</p>
-
-
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221201.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221210.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221218.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221224.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221230.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221238.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221243.png>)
 ---
  
+### 💻🧑‍💻 **Desarrollo**
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221707.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221718.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221725.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221733.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221740.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221813.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221819.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221825.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221859.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221903.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221910.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221916.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221927.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221932.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221944.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 221955.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222008.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222013.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222021.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222027.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222034.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222042.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222048.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222055.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222101.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222106.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222113.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222117.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222124.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222128.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222134.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222139.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222145.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222149.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222155.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222200.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222206.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222211.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222217.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222223.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222231.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 222237.png>) 
+
+---
+
+## 🚫 Limitaciones del Proyecto
+
+#### 1.	Recopilación de Requisitos Incompleta:
+-	Las encuestas pueden no captar todos los requisitos debido a respuestas ambiguas o incompletas.
+-	Falta de participación de todos los grupos interesados.
+#### 2.	Complejidad del Sistema:
+-	Integración con sistemas hospitalarios existentes podría ser compleja y requerir mucho tiempo.
+-	Falta de estandarización en los procesos del hospital.
+#### 3.	Diseño y Usabilidad del Frontend:
+-	Los diseños (Sketch y Mockups) podrían no satisfacer las necesidades específicas de los usuarios finales.
+-	Problemas de accesibilidad para usuarios con discapacidades.
+#### 4.	Capacitación Insuficiente del Personal:
+-	Resistencia al cambio por parte del personal hospitalario.
+-	Falta de tiempo para implementar sesiones de capacitación completas.
+#### 5.	Presión de Tiempo y Recursos:
+-	Plazos ajustados podrían afectar la calidad del diseño y desarrollo.
+-	Recursos humanos y financieros limitados.
+
+### Posibles Mejoras:
+
+#### 1.	Fase de Requisitos:
+-	Usar técnicas adicionales como entrevistas o talleres con grupos focales para complementar las encuestas.
+-	Priorizar requisitos mediante un enfoque basado en valor.
+#### 2.	Tecnologías y Herramientas:
+-	Seleccionar tecnologías modernas con soporte a largo plazo, como frameworks multiplataforma (Flutter, React Native).
+-	Implementar infraestructura en la nube para escalabilidad.
+#### 3.	Pruebas y Validación:
+-	Realizar pruebas de usabilidad con usuarios reales antes de finalizar los diseños.
+-	Ejecutar pruebas de integración y rendimiento durante la fase de desarrollo.
+#### 4.	Seguridad:
+-	Incluir cifrado de extremo a extremo para todos los datos almacenados y transferidos.
+-	Implementar autenticación multifactor para acceso al sistema.
+#### 5.	Capacitación del Personal:
+-	Crear tutoriales interactivos en la aplicación para guiar a los usuarios en tiempo real.
+-	Planificar sesiones regulares de retroalimentación post-implementación.
+#### 6.	Escalabilidad:
+-	Diseñar la arquitectura de software con modularidad, para agregar futuros módulos hospitalarios.
+-	Asegurar que la base de datos soporte grandes volúmenes de datos y consultas concurrentes.
+#### 7.	Monitoreo y Mantenimiento:
+-	Implementar un sistema de monitoreo en tiempo real para identificar problemas rápidamente.
+-	Planificar actualizaciones periódicas para incorporar mejoras basadas en retroalimentación.
+
+---
 ## ⚙️ **Requerimientos Funcionales**
 
 | **RF**  | **Requisito**                 | **Descripción** |
