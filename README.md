@@ -289,7 +289,21 @@ Para recabar los requerimientos del proyecto, se utilizo Google Forms, creando e
 ## 💻 **Propuesta de Frontend**
 
 ### 🎨 **Sketches de diseño**
+A continuación, se muestra los sketches diseñados en base al sitio web anterior.
 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215516.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215601.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215618.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215624.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215631.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215637.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215642.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215708.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215718.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215723.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215729.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215734.png>) 
+![alt text](<Diseño/Captura de pantalla 2024-12-12 215739.png>) 
 ---
 
 ### 🎨 **Wireframes**
