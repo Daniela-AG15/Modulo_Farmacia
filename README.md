@@ -48,7 +48,7 @@ En un entorno hospitalario dinámico y exigente, optimizar los procesos internos
 ## 🏥 **Contexto de Negocio**
 
 <div style="text-align: justify;">
-**Hospital Privado Medical Care and Healing** es una institución líder en el sector salud, comprometida con la mejora continua y la atención integral de los pacientes. Ofrece una amplia gama de servicios médicos, incluidos tratamientos especializados y cuidados intensivos, con el objetivo de proporcionar una atención de calidad y promover la salud preventiva.
+Hospital Privado Medical Care and Healing es una institución líder en el sector salud, comprometida con la mejora continua y la atención integral de los pacientes. Ofrece una amplia gama de servicios médicos, incluidos tratamientos especializados y cuidados intensivos, con el objetivo de proporcionar una atención de calidad y promover la salud preventiva.
 
 Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experiencia del paciente y optimizar sus procesos internos a través de un sistema de gestión integral.
 </div>
@@ -56,35 +56,39 @@ Con un enfoque en la eficiencia operativa, el hospital busca mejorar la experien
 ---
 
 ## 🏥 **Metodología Scrum**
+
 Scrum es una metodología ágil que se utiliza para gestionar proyectos de desarrollo de software, aunque también puede aplicarse en otros ámbitos. Es un marco de trabajo que permite a los equipos de trabajo gestionar de manera flexible y eficiente los proyectos complejos, entregando resultados de manera incremental y continua. Scrum fomenta la colaboración constante, la retroalimentación continua y la adaptación a los cambios.
 
 ### Roles en Scrum
-Product Owner (Propietario del producto): Es la persona encargada de definir el producto y las prioridades del trabajo. Se asegura de que el equipo de desarrollo trabaje en las tareas que aporten mayor valor al negocio.
 
-Scrum Master: Es el facilitador del proceso Scrum. Su función es eliminar obstáculos, ayudar al equipo a seguir los principios ágiles y garantizar que el proceso Scrum se implemente correctamente.
+•	Product Owner (Propietario del producto): Es la persona encargada de definir el producto y las prioridades del trabajo. Se asegura de que el equipo de desarrollo trabaje en las tareas que aporten mayor valor al negocio.
 
-Equipo de Desarrollo: Son los profesionales encargados de ejecutar el trabajo necesario para cumplir los objetivos del proyecto. Están organizados en equipos autoorganizados y multidisciplinarios.
+•	Scrum Master: Es el facilitador del proceso Scrum. Su función es eliminar obstáculos, ayudar al equipo a seguir los principios ágiles y garantizar que el proceso Scrum se implemente correctamente.
+
+•	Equipo de Desarrollo: Son los profesionales encargados de ejecutar el trabajo necesario para cumplir los objetivos del proyecto. Están organizados en equipos autoorganizados y multidisciplinarios.
 Artefactos de Scrum
 
-Product Backlog: Es la lista priorizada de tareas o requisitos del producto. El Product Owner es el responsable de mantener y priorizar este backlog.
+•	Product Backlog: Es la lista priorizada de tareas o requisitos del producto. El Product Owner es el responsable de mantener y priorizar este backlog.
 
-Sprint Backlog: Es la lista de tareas que se deben completar durante un sprint. Este backlog se obtiene del Product Backlog y se organiza en función de la capacidad del equipo y la prioridad del negocio.
+•	Sprint Backlog: Es la lista de tareas que se deben completar durante un sprint. Este backlog se obtiene del Product Backlog y se organiza en función de la capacidad del equipo y la prioridad del negocio.
 
-Incremento: Es el conjunto de funcionalidades completadas durante un Sprint. Este incremento debe ser entregable y añadir valor al producto.
+•	Incremento: Es el conjunto de funcionalidades completadas durante un Sprint. Este incremento debe ser entregable y añadir valor al producto.
 
 ### Eventos de Scrum
-Sprint: Es un ciclo de trabajo de duración fija, generalmente entre 1 y 4 semanas. En cada Sprint se trabaja para completar un conjunto de tareas del Sprint Backlog y entregar un incremento del producto.
 
-Sprint Planning: Es la reunión en la que se planifica el trabajo a realizar durante el Sprint, determinando qué tareas del Product Backlog se moverán al Sprint Backlog.
+•	Sprint: Es un ciclo de trabajo de duración fija, generalmente entre 1 y 4 semanas. En cada Sprint se trabaja para completar un conjunto de tareas del Sprint Backlog y entregar un incremento del producto.
 
-Daily Scrum: Es una reunión diaria de corta duración (máximo 15 minutos) en la que el equipo de desarrollo comparte el progreso, los problemas encontrados y el plan para el día.
+•	Sprint Planning: Es la reunión en la que se planifica el trabajo a realizar durante el Sprint, determinando qué tareas del Product Backlog se moverán al Sprint Backlog.
 
-Sprint Review: Al final de cada Sprint, el equipo realiza una revisión del trabajo completado, mostrando el incremento al Product Owner y a los stakeholders.
+•	Daily Scrum: Es una reunión diaria de corta duración (máximo 15 minutos) en la que el equipo de desarrollo comparte el progreso, los problemas encontrados y el plan para el día.
 
-Sprint Retrospective: Después de la Sprint Review, el equipo realiza una retrospectiva para discutir qué fue bien, qué se puede mejorar y cómo trabajar mejor en el próximo Sprint.
+•	Sprint Review: Al final de cada Sprint, el equipo realiza una revisión del trabajo completado, mostrando el incremento al Product Owner y a los stakeholders.
+
+•	Sprint Retrospective: Después de la Sprint Review, el equipo realiza una retrospectiva para discutir qué fue bien, qué se puede mejorar y cómo trabajar mejor en el próximo Sprint.
 
 
 ## 🏥 **Conexión Metodologica**
+
 Scrum es útil porque permite a los equipos de trabajo adaptarse rápidamente a los cambios, mejorar continuamente sus procesos, colaborar de manera efectiva y entregar valor de forma constante. El uso de este marco metodológico ayuda a minimizar riesgos, aumentar la transparencia y optimizar la entrega de funcionalidades clave que aporten valor al negocio.
 
 Scrum es el marco más popular de las metodologías Agiles. Es una metodología adaptativa (promueve la adaptación continua), iterativa (varias repeticiones), rápida, flexible y eficaz, diseñada para ofrecer al cliente/usuarios un valor significativo de forma rápida y a lo largo del proyecto.
