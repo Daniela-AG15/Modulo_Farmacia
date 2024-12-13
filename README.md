@@ -360,7 +360,6 @@ A continuación, se muestra los sketches diseñados en base al sitio web anterio
 ![alt text](<Diseño/Captura de pantalla 2024-12-12 222223.png>) 
 ![alt text](<Diseño/Captura de pantalla 2024-12-12 222231.png>) 
 ![alt text](<Diseño/Captura de pantalla 2024-12-12 222237.png>) 
-[alt text](README.md)
 
 ---
 
