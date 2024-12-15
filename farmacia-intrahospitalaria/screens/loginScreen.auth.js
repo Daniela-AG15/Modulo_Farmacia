@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { LinearGradient } from 'expo-linear-gradient';
-/*
 import * as Google from 'expo-auth-session/providers/google';
 import * as AuthSession from 'expo-auth-session';
 import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
@@ -10,11 +9,10 @@ import * as WebBrowser from 'expo-web-browser';
 
 WebBrowser.maybeCompleteAuthSession();
 
-const GOOGLE_CLIENT_ID = 'TU_CLIENT_ID_DE_GOOGLE';
-const DISCORD_CLIENT_ID = 'TU_CLIENT_ID_DE_DISCORD';
+const GOOGLE_CLIENT_ID = '652709953322-fi0qj0i0vqt5ruh42lm3pq44kmuulbrg.apps.googleusercontent.com';
+const DISCORD_CLIENT_ID = '1316967528915927092';
 const DISCORD_REDIRECT_URI = AuthSession.makeRedirectUri();
 
-*/
 
 const LoginScreenAuth = ({ navigation }) => {
   const [nombreUsuario, setNombreUsuario] = useState('');
@@ -34,7 +32,6 @@ const LoginScreenAuth = ({ navigation }) => {
     navigation.navigate('Home');
   };
 
-  /*
     // Google Login Setup
   const [googleRequest, googleResponse, googlePromptAsync] = Google.useAuthRequest({
     clientId: GOOGLE_CLIENT_ID,
@@ -75,7 +72,7 @@ const LoginScreenAuth = ({ navigation }) => {
       Alert.alert('Inicio de sesión cancelado');
     }
   };
-  */
+  
 
   return (
     <View style={styles.container}>
